@@ -1,86 +1,95 @@
 /*
 Design by Alou and Fad
 */
-
-h1 {color:red
-}
-
-#home #content{
-    width:310px;
-    padding-left: 100px
-
-}
+body{margin: 0 auto;
+     width: 980px;}
 
 /* Menu */
 
-#menu {
-	width: 980px;
-	height: 46px;
-	margin: 0 auto;
-	padding: 15px 0px 0px 0px;
+#menu {height: 46px;
+    padding: 15px 0px 0px 0px;
 }
 
+#home #content h1{text-align: center;
+                  font-size: 50px;
+                  }
+#home #content h2{font-size: 30px;}
+#home #content p{font-size: 20px;}
+
 #menu ul {
-	margin: 0;
-	padding: 0px 0px 0px 4px;
-	list-style: none;
-	line-height: normal;
+    margin: 0;
+    padding: 0px 0px 0px 4px;
+    list-style: none;
+    line-height: normal;
 }
 
 #menu li {
-	float: left;
+    float: left;
 }
 
 #menu a {
-	display: block;
-	float: left;
-	height: 24px;
-	padding: 4px 30px 0px 30px;
-	text-decoration: none;
-	text-transform: lowercase;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	font-weight: normal;
-	color: #181818;
-	border: none;
+    display: block;
+    float: left;
+    height: 24px;
+    padding: 4px 30px 0px 30px;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #181818;
+    border: none;
 }
 
 #menu li.current_page_item {
-	background: #FF2929;
+    background: #FF2929;
 }
 
 #menu .current_page_item a {
-	background: #FF2929;
-	color: #FFFFFF;
+    background: #FF2929;
+    color: #FFFFFF;
 }
 
 #menu a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 
-#splash {
-	width: 980px;
-	height: 340px;
-	margin: 0px auto;
-	background: url(images/img06.jpg) no-repeat left top;
-}
 
 /* Registered */
+#registered  {margin: 0 auto;}
+#registered #left {float:left; width: 360px;}
 
 #registered #registered_form ul{
-display : none;
-}
-
+            display : none;}
+#registered #registered_form  input[id="id_last_name"]{
+            width: 100px; margin-left: 90px;}
 #registered #registered_form input[id="id_first_name"] {
-width: 100px;
-}
+            width: 100px; margin-left: 76px;
+            }
+#registered #registered_form  input[id="id_country"]{
+            width: 100px;margin-left: 92px;}
+#registered #registered_form  input[id="id_city"]{
+            height: 20px; width: 100px; margin-left: 94px;}
+#registered #registered_form input[id="id_email"] {
+            width: 100px; margin-left: 89px;
+            }
+#registered #registered_form input[id="id_num_passport"] {
+            width: 100px; margin-left: 26px;
+            }
+#registered #registered_form  input[id="id_nationality"]{
+            width: 100px;margin-left: 60px;}
 
-#registered #registered_form  input[id="id_last_name"], input[id="id_nationality"],
-input[id="id_teacher_absentees"]
-{width: 30px;}
+#registered #registered_form input[id="id_club_name"]{
+            width: 100px;margin-left: 96px;}
+#registered #registered_form input[id="id_zone"]{
+            width: 100px;margin-left: 140px;}
+#registered #registered_form input[id="id_district"]{
+            width: 100px;margin-left: 130px;}
+#registered #registered_form input[id="id_date_to_arrive"]{
+            width: 100px;margin-left: 92px;}
+#registered #registered_form input[id="id_departure_date"]{
+            width: 100px;margin-left: 86px;}
+#registered #registered_form input[id="id_transportation"]{
+            width: 100px;margin-left: 60px;}
 
-#registered #registered_form select[name="club"]
-{width: 100px;}
 
-#registered #registered_form  textarea[id="id_adress"]
-{ height: 20px;}

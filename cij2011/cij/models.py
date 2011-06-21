@@ -21,22 +21,27 @@ class Club(models.Model):
     seat = models.CharField(max_length=60, verbose_name=("Seat"))
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
-        
+
 
 class Pamper(models.Model):
     """ Camper registered
     """
-    first_name = models.CharField(max_length=30, verbose_name=("First Name"))
-    last_name = models.CharField(max_length=30, verbose_name=("Last Name"))
-    nationality = models.CharField(max_length=30, verbose_name=("Nationality"))
-    adress = models.TextField(verbose_name=("Adress"))
+    title = models.CharField(max_length=2, verbose_name=("Title"))
+    first_name = models.CharField(max_length=30, verbose_name=("Prénom"))
+    last_name = models.CharField(max_length=30, verbose_name=("Nom"))
+    language = models.CharField(max_length=30, verbose_name=("Language"))
+    nationality = models.CharField(max_length=30, verbose_name=("Nationalite"))
+    city = models.CharField(max_length=30, verbose_name=("Ville"))
     email = models.EmailField(blank=True, verbose_name=("Email"))
-    date_to_arrive = models.DateField(verbose_name=("Date to arrive"),\
+    club_name = models.CharField(max_length=50, verbose_name=("Nom du club"))
+    zone = models.IntegerField(verbose_name=("Zone"))
+    district = models.CharField(max_length=5, verbose_name=("District"))
+    country = models.CharField(max_length=50, verbose_name=("Pays"))
+    date_to_arrive = models.DateField(verbose_name=("Date d'arrivee"),\
                              default=datetime.datetime.today)
-    departure_date = models.DateField(verbose_name=("Departure date"),\
+    departure_date = models.DateField(verbose_name=("Date de depart"),\
                              default=datetime.datetime.today)
-    club = models.ForeignKey(Club, verbose_name=("Club"))
+    transportation = models.CharField(max_length=20, verbose_name=("Moyen de transport"))
     def __unicode__(self):
         return u'%(first_name)s %(last_name)s ' % {"first_name": self.first_name,
                                                    "last_name": self.last_name}
-# Create your models here

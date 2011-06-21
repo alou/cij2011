@@ -16,4 +16,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r"^$", "cij.views.home", name="home"),
     url(r"^registered/$", "cij.views.registered", name="registered"),
+    url(r"^club/$", "cij.views.club", name="club"),
+    url(r"^contact/$", "cij.views.contact", name="contact"),
 )

@@ -2,11 +2,32 @@
 {% block title %}Registered{% endblock %}
 {% block page-id %}registered{% endblock %}
 {% block content %}
-    <form action="" method="post" id="registered_form">{% csrf_token %}
-        {% for field in form %}
-            {{field.errors}}
-            {{ field.label_tag }}: {{ field }}</br> 
-        {% endfor %}
-        <input type='submit' value = 'Save'/>
-    </form>
+        <form action="" method="post" id="registered_form">{% csrf_token %}
+            <div id='left'>
+                <label>Mr :</label> <INPUT type=radio name="title" value="Mr">
+                <label>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+
+                {{form.last_name.label}} {{form.last_name}}<br>
+                {{form.first_name.label}} {{form.first_name}}<br>
+                {{form.country.label}} {{form.country}}<br>
+                {{form.city.label}} {{form.city}}<br>
+                {{form.nationality.label}} {{form.nationality}}<br>
+                {{form.email.label}} {{form.email}}<br>
+                {{form.num_passport.label}} {{form.num_passport}}<br>
+
+            </div>
+            <div id='right'>
+                <label>Francais :</label> <INPUT type=radio name="language" value="fr">
+                <label>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
+                {{form.club_name.label}} {{form.club_name}}<br>
+                {{form.zone.label}} {{form.zone}}<br>
+                {{form.district.label}} {{form.district}}<br>
+                {{form.date_to_arrive.label}} {{form.date_to_arrive}}<br>
+                {{form.departure_date.label}} {{form.departure_date}}<br>
+                {{form.transportation.label}} {{form.transportation}}
+            </div>
+
+            <input type='submit' value = 'Save'/>
+        </form>
 {% endblock %}

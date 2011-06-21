@@ -4,17 +4,21 @@ Design by Alou and Fad
 body{margin: 0 auto;
      width: 980px;}
 
-/* Menu */
-
-#menu {height: 46px;
-    padding: 15px 0px 0px 0px;
-}
 
 #home #content h1{text-align: center;
                   font-size: 50px;
                   }
 #home #content h2{font-size: 30px;}
 #home #content p{font-size: 20px;}
+
+/* Menu */
+
+#menu {
+    height: 31px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 7px 5px 57px 11px #A9A9A9;
+    margin-bottom: 93px;
+}
 
 #menu ul {
     margin: 0;
@@ -40,7 +44,9 @@ body{margin: 0 auto;
     color: #181818;
     border: none;
 }
-
+menu li:hover > a.top_link span {
+    color: red;
+    }
 #menu li.current_page_item {
     background: #FF2929;
 }

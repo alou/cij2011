@@ -2,9 +2,14 @@
 {% block title %}Home{% endblock %}
 {% block page-id %}home{% endblock %}
 {% block content %}
-
-
-
+    <div id='menu'>
+        <ul>
+            <li class="current_page_item"><a href="/">Accueil</a></li>
+            <li><a href="{% url registered %}">Inscription</a></li>
+            <li><a href="{% url club %}">Club</a></li>
+            <li><a href="{% url contact %}">Contact</a></li>
+        </ul>
+    </div>
     <div id='content'>
         <h1>Nombres d'inscrits : {{pamper_count}}</h1>
         <h2>Accueil</h2>

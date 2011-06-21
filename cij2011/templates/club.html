@@ -2,5 +2,13 @@
 {% block title %}Club{% endblock %}
 {% block page-id %}club{% endblock %}
 {% block content %}
+    <div id='menu'>
+        <ul>
+            <li ><a href="/">Accueil</a></li>
+            <li><a href="{% url registered %}">Inscription</a></li>
+            <li class="current_page_item"><a href="{% url club %}">Club</a></li>
+            <li><a href="{% url contact %}">Contact</a></li>
+        </ul>
+    </div>
 
 {% endblock %}

@@ -11,14 +11,6 @@
 
     <body>
         <div id="{% block page-id %}{% endblock %}">
-            <div id='menu'>
-                <ul>
-                    <li class="current_page_item"><a href="/">Accueil</a></li>
-                    <li><a href="{% url registered %}">Inscription</a></li>
-                    <li><a href="{% url club %}">Club</a></li>
-                    <li><a href="{% url contact %}">Contact</a></li>
-                </ul>
-            </div>
 
             {% block content %}
             {% endblock %}

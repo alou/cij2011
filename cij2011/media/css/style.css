@@ -16,7 +16,7 @@ body{margin: 0 auto;
 #menu {
     height: 31px;
     border-radius: 8px 8px 8px 8px;
-    box-shadow: 7px 5px 57px 11px #A9A9A9;
+    box-shadow: 7px 5px 57px 11px #F4B453;
     margin-bottom: 93px;
 }
 
@@ -33,7 +33,7 @@ body{margin: 0 auto;
 
 #menu a {
     border: medium none;
-    color: #CCCCCC;
+    color: #902F4C;
     display: block;
     float: left;
     font-size: 14px;
@@ -45,16 +45,16 @@ body{margin: 0 auto;
 
 #menu .current_page_item a {
     border-radius: 8px 8px 8px 8px;
-    background: #CCCCCC;
+    background: #902F4C;
     border: 2px double;
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 #menu a:hover {
     border-radius: 8px 8px 8px 8px;
-    background: #CCCCCC;
+    background: #902F4C;
     border: 2px double;
     color: #FFFFFF;
     text-decoration: none;

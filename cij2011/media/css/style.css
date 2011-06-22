@@ -32,32 +32,33 @@ body{margin: 0 auto;
 }
 
 #menu a {
+    border: medium none;
+    color: #CCCCCC;
     display: block;
     float: left;
-    height: 24px;
-    padding: 4px 30px 0px 30px;
+    font-size: 14px;
+    height: 29px;
+    padding: 4px 30px 0;
     text-decoration: none;
-    text-transform: lowercase;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    color: #181818;
-    border: none;
-}
-menu li:hover > a.top_link span {
-    color: red;
-    }
-#menu li.current_page_item {
-    background: #FF2929;
+    text-transform: uppercase;
 }
 
 #menu .current_page_item a {
-    background: #FF2929;
+    border-radius: 8px 8px 8px 8px;
+    background: #CCCCCC;
+    border: 2px double;
     color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 #menu a:hover {
+    border-radius: 8px 8px 8px 8px;
+    background: #CCCCCC;
+    border: 2px double;
+    color: #FFFFFF;
     text-decoration: none;
+    font-size: 1.1em;
 }
 
 

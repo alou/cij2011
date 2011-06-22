@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     url(r"^registered/$", "cij.views.registered", name="registered"),
     url(r"^club/$", "cij.views.club", name="club"),
     url(r"^contact/$", "cij.views.contact", name="contact"),
+    url(r"^confirmation/(?P<num>\d+)*$", "cij.views.confirmation", name="confirmation"),
 )

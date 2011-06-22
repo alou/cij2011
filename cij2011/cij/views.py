@@ -28,9 +28,19 @@ def registered(request):
         form = PamperForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(reverse('confirmation'))
         c.update({'form': form})
     return render_to_response('registered.html', c)
+
+def confirmation(request, *args, **kwargs):
+	"""
+	"""
+	num = kwargs["num"] or 1
+	c = {}
+	pamper = Pamper.objects.filter(id=num)
+	print pamper
+	c.update(csrf(request))
+	return render_to_response('confirmation.html', c)
 
 def club(request):
     """

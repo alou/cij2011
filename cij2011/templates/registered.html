@@ -12,12 +12,37 @@
         </ul>
     </div>
     <form action="" method="post" id="registered_form">{% csrf_token %}
-        <div id='left'>
-            <label>Mr :</label> <INPUT type=radio name="title" value="Mr">
-            <label>Mme :</label> <INPUT type=radio name="title" value="Mme">
-            <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+        {% for field in form %}
+            {% if field.errors %}
+                <span id =erreur_saisie>
+                    {% for error in field.errors %}
 
-            {{form.last_name.label}} {{form.last_name}}<br>
+                     <br>{{ field.label_tag}}: {{ error }}
+                    {% endfor %}
+                </span>
+            {% endif %}
+        {% endfor %}
+        <div id='left'>
+
+            {% if title == "Mr" %}
+                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" CHECKED>
+                <label>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+            {% else %}{% if title == "Mme" %}
+                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                <label>Mme :</label> <INPUT type=radio name="title" value="Mme" CHECKED>
+                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+            {% else %}{%if title == "Mlle" %}
+                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                <label>Mme :</label> <INPUT type=radio name="title" value="Mme" >
+                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle" CHECKED><br>
+            {% else %}
+                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                <label>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+            {% endif %}{% endif %}{% endif %}
+
+            {{form.last_name.label}} {{form.last_name}} <br>
             {{form.first_name.label}} {{form.first_name}}<br>
             {{form.country.label}} {{form.country}}<br>
             {{form.city.label}} {{form.city}}<br>
@@ -27,8 +52,16 @@
 
         </div>
         <div id='right'>
-            <label>Francais :</label> <INPUT type=radio name="language" value="fr">
-            <label>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
+            {% if language == "fr" %}
+                <label>Francais :</label> <INPUT type=radio name="language" value="fr" CHECKED>
+                <label>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
+            {% else %}{% if language == "en" %}
+                <label>Francais :</label> <INPUT type=radio name="language" value="fr" >
+                <label>Anglais :</label> <INPUT type=radio name="language" value="en" CHECKED><br>
+            {% else %}
+                <label>Francais :</label> <INPUT type=radio name="language" value="fr" >
+                <label>Anglais :</label> <INPUT type=radio name="language" value="en" ><br>
+            {% endif %}{% endif %}
             {{form.club_name.label}} {{form.club_name}}<br>
             {{form.zone.label}} {{form.zone}}<br>
             {{form.district.label}} {{form.district}}<br>

@@ -3,5 +3,16 @@
 {% block page-id %}coonfirmation{% endblock %}
 {% block content %}
 
+{% for i in pamper %}
+    {{i.last_name}}<br>
+        {{i.first_name}}<br>
+       {{i.country}}<br>
+        {{i.city}}<br>
+        {{i.nationality}}<br>
+        {{i.email}}<br>
+        {{i.num_passport}}<br>
+    </tr>
 
+{% endfor %}
+<a href="/">OK</a>
 {% endblock %}

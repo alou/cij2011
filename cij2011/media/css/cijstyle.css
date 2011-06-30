@@ -15,8 +15,8 @@ body{margin: 0 auto;
 
 #menu {
     height: 31px;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: 7px 5px 57px 11px #F4B453;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -moz-box-shadow: 7px 5px 57px 11px #F4B453;
     margin-bottom: 93px;
 }
 
@@ -44,7 +44,7 @@ body{margin: 0 auto;
 }
 
 #menu .current_page_item a {
-    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
     background: #902F4C;
     border: 2px double;
     color: #FFFFFF;
@@ -53,7 +53,7 @@ body{margin: 0 auto;
 }
 
 #menu a:hover {
-    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
     background: #902F4C;
     border: 2px double;
     color: #FFFFFF;

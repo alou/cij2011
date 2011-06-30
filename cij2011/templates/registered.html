@@ -12,64 +12,117 @@
         </ul>
     </div>
     <form action="" method="post" id="registered_form">{% csrf_token %}
-        {% for field in form %}
-            {% if field.errors %}
-                <span id =erreur_saisie>
-                    {% for error in field.errors %}
 
-                     <br>{{ field.label_tag}}: {{ error }}
-                    {% endfor %}
-                </span>
-            {% endif %}
-        {% endfor %}
         <div id='left'>
-
-            {% if title == "Mr" %}
-                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" CHECKED>
-                <label>Mme :</label> <INPUT type=radio name="title" value="Mme">
-                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
-            {% else %}{% if title == "Mme" %}
-                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" >
-                <label>Mme :</label> <INPUT type=radio name="title" value="Mme" CHECKED>
-                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
-            {% else %}{%if title == "Mlle" %}
-                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" >
-                <label>Mme :</label> <INPUT type=radio name="title" value="Mme" >
-                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle" CHECKED><br>
-            {% else %}
-                <label>Mr :</label> <INPUT type=radio name="title" value="Mr" >
-                <label>Mme :</label> <INPUT type=radio name="title" value="Mme">
-                <label>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
-            {% endif %}{% endif %}{% endif %}
-
-            {{form.last_name.label}} {{form.last_name}} <br>
-            {{form.first_name.label}} {{form.first_name}}<br>
-            {{form.country.label}} {{form.country}}<br>
-            {{form.city.label}} {{form.city}}<br>
-            {{form.nationality.label}} {{form.nationality}}<br>
-            {{form.email.label}} {{form.email}}<br>
-            {{form.num_passport.label}} {{form.num_passport}}<br>
+            <table>
+                    {% if title == "Mr" %}
+                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" CHECKED>
+                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+                    {% else %}{% if title == "Mme" %}
+                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme" CHECKED>
+                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+                    {% else %}{%if title == "Mlle" %}
+                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme" >
+                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle" CHECKED><br>
+                    {% else %}
+                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+                    {% endif %}{% endif %}{% endif %}
+                    <TR>
+                        <TD class='label'> {{form.last_name.label}} </TD>
+                        <TD> {{form.last_name}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.first_name.label}}</TD>
+                        <TD>  {{form.first_name}}</TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.country.label}} </TD>
+                        <TD> {{form.country}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.city.label}} </TD>
+                        <TD> {{form.city}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.nationality.label}} </TD>
+                        <TD> {{form.nationality}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.email.label}} </TD>
+                        <TD> {{form.email}}</TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.num_passport.label}} </TD>
+                        <TD> {{form.num_passport}}</TD>
+                    </TR>
+            </table>
 
         </div>
         <div id='right'>
-            {% if language == "fr" %}
-                <label>Francais :</label> <INPUT type=radio name="language" value="fr" CHECKED>
-                <label>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
-            {% else %}{% if language == "en" %}
-                <label>Francais :</label> <INPUT type=radio name="language" value="fr" >
-                <label>Anglais :</label> <INPUT type=radio name="language" value="en" CHECKED><br>
-            {% else %}
-                <label>Francais :</label> <INPUT type=radio name="language" value="fr" >
-                <label>Anglais :</label> <INPUT type=radio name="language" value="en" ><br>
-            {% endif %}{% endif %}
-            {{form.club_name.label}} {{form.club_name}}<br>
-            {{form.zone.label}} {{form.zone}}<br>
-            {{form.district.label}} {{form.district}}<br>
-            {{form.date_to_arrive.label}} {{form.date_to_arrive}}<br>
-            {{form.departure_date.label}} {{form.departure_date}}<br>
-            {{form.transportation.label}} {{form.transportation}}
+            <TABLE >
+
+                    {% if language == "fr" %}
+                        <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" CHECKED>
+                        <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
+                    {% else %}{% if language == "en" %}
+                        <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" >
+                        <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en" CHECKED><br>
+                    {% else %}
+                        <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" >
+                        <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en" ><br>
+                    {% endif %}{% endif %}
+
+                    <TR>
+                        <TD class='label'> {{form.club_name.label}}  </TD>
+                        <TD> {{form.club_name}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label' > {{form.zone.label}} </TD>
+                        <TD>  {{form.zone}}</TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.district.label}}</TD>
+                        <TD> {{form.district}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.date_to_arrive.label}} </TD>
+                        <TD>{{form.date_to_arrive}}</TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.departure_date.label}}  </TD>
+                        <TD> {{form.departure_date}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'> {{form.transportation.label}}  </TD>
+                        <TD> {{form.transportation}} </TD>
+                    </TR>
+                    <TR>
+                        <TD class='label'>   </TD>
+                        <TD><input id='id_submit' type='submit' value = 'Save'/></TD>
+                    </TR>
+
+            </table>
+        </div>
+        <div id='bas'>
+            <table>
+                {% for field in form %}
+                    {% if field.errors %}
+                        {% for error in field.errors %}
+                            <TR>
+                                <TD class='error'> {{ field.label_tag}}</TD>
+                                <TD>{{ error }}</TD>
+                            </TR>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </table>
         </div>
 
-        <input type='submit' value = 'Save'/>
+
     </form>
 {% endblock %}

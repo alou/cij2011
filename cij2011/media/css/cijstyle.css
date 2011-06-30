@@ -69,35 +69,15 @@ body{margin: 0 auto;
 
 #registered #registered_form ul{
             display : none;}
-#registered #registered_form  input[id="id_last_name"]{
-            width: 100px; margin-left: 90px;}
-#registered #registered_form input[id="id_first_name"] {
-            width: 100px; margin-left: 76px;
-            }
-#registered #registered_form  input[id="id_country"]{
-            width: 100px;margin-left: 92px;}
-#registered #registered_form  input[id="id_city"]{
-            height: 20px; width: 100px; margin-left: 94px;}
-#registered #registered_form input[id="id_email"] {
-            width: 100px; margin-left: 89px;
-            }
-#registered #registered_form input[id="id_num_passport"] {
-            width: 100px; margin-left: 26px;
-            }
-#registered #registered_form  input[id="id_nationality"]{
-            width: 100px;margin-left: 60px;}
+#registered #registered_form  input[id="id_last_name"], input[id="id_first_name"], input[id="id_country"], input[id="id_city"], input[id="id_nationality"], input[id="id_email"]{
+            width: 100px; margin-left: 20px}
 
-#registered #registered_form input[id="id_club_name"]{
-            width: 100px;margin-left: 96px;}
-#registered #registered_form input[id="id_zone"]{
-            width: 100px;margin-left: 140px;}
-#registered #registered_form input[id="id_district"]{
-            width: 100px;margin-left: 130px;}
-#registered #registered_form input[id="id_date_to_arrive"]{
-            width: 100px;margin-left: 92px;}
-#registered #registered_form input[id="id_departure_date"]{
-            width: 100px;margin-left: 86px;}
-#registered #registered_form input[id="id_transportation"]{
-            width: 100px;margin-left: 60px;}
+#registered #registered_form input[id="id_num_passport"],input[id="id_club_name"],input[id="id_zone"],input[id="id_district"], input[id="id_date_to_arrive"],input[id="id_departure_date"], input[id="id_transportation"], input[id="id_submit"]{
+            width: 100px;margin-left: 20px
+            }
+.label{font-family: times New Roman;font-weight: bold;
+    font-size: 20px;}
+.error{font-family: times New Roman;font-weight: bold;
+    font-size: 15px;}
 
 

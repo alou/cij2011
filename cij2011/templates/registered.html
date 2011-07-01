@@ -122,7 +122,13 @@
                 {% endfor %}
             </table>
         </div>
+        <script type="text/javascript">
+           $('#id_departure_date , #id_date_to_arrive').datepicker({ dateFormat: 'dd/mm/yy',
+                                      showButtonPanel: true,
+                                      closeText: 'X',showOn: "button",
+                                        buttonImage: "/static/css/images/calendar.gif",
 
-
+                                    });
+        </script>
     </form>
 {% endblock %}

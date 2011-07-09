@@ -81,3 +81,18 @@ body{margin: 0 auto;
     font-size: 15px;}
 
 
+/* Confirmation */
+#coonfirmation  {margin: 0 auto;}
+#coonfirmation #left {float:left; width: 360px;}
+
+/* correction */
+#correction  {margin: 0 auto;}
+#correction #left {float:left; width: 360px;}
+#correction #registered_form ul{
+            display : none;}
+#correction #registered_form  input[id="id_last_name"], input[id="id_first_name"], input[id="id_country"], input[id="id_city"], input[id="id_nationality"], input[id="id_email"]{
+            width: 100px; margin-left: 20px}
+
+#correction #registered_form input[id="id_num_passport"],input[id="id_club_name"],input[id="id_zone"],input[id="id_district"], input[id="id_date_to_arrive"],input[id="id_departure_date"], input[id="id_transportation"], input[id="id_submit"]{
+            width: 100px;margin-left: 20px
+            }

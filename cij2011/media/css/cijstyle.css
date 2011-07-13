@@ -62,6 +62,10 @@ body{margin: 0 auto;
     font-size: 1.1em;
 }
 
+#menu #image_right{margin-left: 247px;
+    width: 90px;}
+#menu #image_left{width: 90px;margin-left: -4px;}
+
 
 /* Registered */
 #registered  {margin: 0 auto;}
@@ -96,3 +100,90 @@ body{margin: 0 auto;
 #correction #registered_form input[id="id_num_passport"],input[id="id_club_name"],input[id="id_zone"],input[id="id_district"], input[id="id_date_to_arrive"],input[id="id_departure_date"], input[id="id_transportation"], input[id="id_submit"]{
             width: 100px;margin-left: 20px
             }
+
+
+/* defilement images */
+#home #gallery {
+	position:relative;
+	height:360px
+}
+#home #gallery {margin: 0 auto;height: 200px;
+	width: 581px;
+}
+	#home #gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#home #gallery a img {
+		border:none;
+	}
+	
+	#home #gallery a.show {
+		z-index:500
+	}
+
+	#home #gallery .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:100px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#home #gallery .caption .content {
+		margin:5px
+	}
+	
+	#home #gallery .caption .content h3 {
+		margin:0;
+		padding:0;
+		color:#1DCCEF;
+	}
+	
+	
+/* Club */
+.onglet
+        {
+                display:inline-block;
+                margin-left:3px;
+                margin-right:3px;
+                padding:3px;
+                border:1px solid black;
+                cursor:pointer;
+        }
+        .onglet_0
+        {
+                background:#bbbbbb;
+                border-bottom:1px solid black;
+        }
+        .onglet_1
+        {
+                background:#dddddd;
+                border-bottom:0px solid black;
+                padding-bottom:4px;
+        }
+        .contenu_onglet
+        {
+                box-shadow: 7px 5px 57px 11px #F4B453;
+                border:1px solid black;
+                margin-top:-1px;
+                padding:5px;
+                display:none;
+        }
+        ul
+        {
+                margin-top:0px;
+                margin-bottom:0px;
+                margin-left:-10px
+        }
+        h1
+        {
+                margin:0px;
+                padding:0px;
+        }
+
+#club h2 {margin: 0 auto;width: 224px;}
+#club #bottom{margin-left: 131px;}

@@ -5,12 +5,17 @@
 
     <div id='menu'>
         <ul>
+            <li><img id='image_left' border="0" src="/static/css/images/Leo-Logo-Color.png"></li>
             <li><a href="/">Accueil</a></li>
             <li class="current_page_item"><a href="{% url registered %}">Inscription</a></li>
             <li><a href="{% url club %}">Club</a></li>
             <li><a href="{% url contact %}">Contact</a></li>
+            <li><img id='image_right' border="0" src="/static/css/images/logo_Lions.jpg"></li>
         </ul>
     </div>
+		
+		
+    
     <form action="" method="post" id="registered_form">{% csrf_token %}
 
         <div id='left'>
@@ -39,6 +44,7 @@
                     <TR>
                         <TD class='label'> {{form.first_name.label}}</TD>
                         <TD>  {{form.first_name}}</TD>
+                        <TD> <img id='image_right' border="0" src="/static/css/images/calendar.gif" title="{{form.first_name.errors}}"> </TD>
                     </TR>
                     <TR>
                         <TD class='label'> {{form.country.label}} </TD>

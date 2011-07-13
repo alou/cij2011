@@ -106,7 +106,6 @@ def correction(request, *args, **kwargs):
 				pamper.departure_date = dnew_format
 				pamper.transportation = form.cleaned_data['transportation']
 				pamper.save()
-				pamper = Pamper.objects.order_by('-id')[0]
 				return HttpResponseRedirect(reverse('confirmation', args=[pamper.id]))
 
 			elif 'title' in request.POST and not 'language' in request.POST:
@@ -123,8 +122,11 @@ def correction(request, *args, **kwargs):
 def club(request):
     """
     """
+    clubs = Club.objects.all()
     c = {}
     c.update(csrf(request))
+    c.update({'clubs': clubs})
+    
     return render_to_response('club.html', c)
 
 def contact(request):

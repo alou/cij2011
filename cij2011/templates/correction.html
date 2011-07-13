@@ -3,9 +3,11 @@
 {% block page-id %}correction{% endblock %}
 {% block content %}
 
+    <div id="leo"><img id='image_left' border="0" style="float:right" src="/static/css/images/Leo-Logo-Color.png" width="150"></div>
+    <div id="lion"><img id='image_right' border="0" style="float:left" src="/static/css/images/logo_Lions.jpg" width="150"></div>
     <div id='menu'>
         <ul>
-			<li><img id='image_left' border="0" src="/static/css/images/Leo-Logo-Color.png"></li>
+            <li><img id='image_left' border="0" src="/static/css/images/Leo-Logo-Color.png"></li>
             <li><a href="/">Accueil</a></li>
             <li class="current_page_item"><a href="#">Correction</a></li>
             <li><a href="{% url club %}">Club</a></li>
@@ -14,96 +16,92 @@
         </ul>
     </div>
     <form action="" method="post" id="registered_form">{% csrf_token %}
-
         <div id='left'>
             <table>
-                    {% if title == "Mr" %}
-                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" CHECKED>
-                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme">
-                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
-                    {% else %}{% if title == "Mme" %}
-                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
-                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme" CHECKED>
-                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
-                    {% else %}{%if title == "Mlle" %}
-                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
-                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme" >
-                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle" CHECKED><br>
-                    {% else %}
-                        <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
-                        <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme">
-                        <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
-                    {% endif %}{% endif %}{% endif %}
-                    <TR>
-                        <TD class='label'> {{form.last_name.label}} </TD>
-                        <TD> {{form.last_name}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.first_name.label}}</TD>
-                        <TD>  {{form.first_name}}</TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.country.label}} </TD>
-                        <TD> {{form.country}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.city.label}} </TD>
-                        <TD> {{form.city}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.nationality.label}} </TD>
-                        <TD> {{form.nationality}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.email.label}} </TD>
-                        <TD> {{form.email}}</TD>
-                    </TR>
+                {% if title == "Mr" %}
+                    <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" CHECKED>
+                    <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                    <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+                {% else %}{% if title == "Mme" %}
+                    <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                    <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme" CHECKED>
+                    <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+                {% else %}{%if title == "Mlle" %}
+                    <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                    <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme" >
+                    <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle" CHECKED><br>
+                {% else %}
+                    <label class='label'>Mr :</label> <INPUT type=radio name="title" value="Mr" >
+                    <label class='label'>Mme :</label> <INPUT type=radio name="title" value="Mme">
+                    <label class='label'>Mlle : </label><INPUT type=radio name="title" value="Mlle"><br>
+                {% endif %}{% endif %}{% endif %}
+                <TR>
+                    <TD class='label'> {{form.last_name.label}} </TD>
+                    <TD> {{form.last_name}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.first_name.label}}</TD>
+                    <TD>  {{form.first_name}}</TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.country.label}} </TD>
+                    <TD> {{form.country}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.city.label}} </TD>
+                    <TD> {{form.city}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.nationality.label}} </TD>
+                    <TD> {{form.nationality}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.email.label}} </TD>
+                    <TD> {{form.email}}</TD>
+                </TR>
             </table>
-
         </div>
         <div id='right'>
             <TABLE >
+                {% if language == "fr" %}
+                    <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" CHECKED>
+                    <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
+                {% else %}{% if language == "en" %}
+                    <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" >
+                    <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en" CHECKED><br>
+                {% else %}
+                    <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" >
+                    <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en" ><br>
+                {% endif %}{% endif %}
 
-                    {% if language == "fr" %}
-                        <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" CHECKED>
-                        <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en"><br>
-                    {% else %}{% if language == "en" %}
-                        <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" >
-                        <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en" CHECKED><br>
-                    {% else %}
-                        <label class='label'>Francais :</label> <INPUT type=radio name="language" value="fr" >
-                        <label class='label'>Anglais :</label> <INPUT type=radio name="language" value="en" ><br>
-                    {% endif %}{% endif %}
-
-                    <TR>
-                        <TD class='label'> {{form.club_name.label}}  </TD>
-                        <TD> {{form.club_name}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label' > {{form.zone.label}} </TD>
-                        <TD>  {{form.zone}}</TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.district.label}}</TD>
-                        <TD> {{form.district}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.date_to_arrive.label}} </TD>
-                        <TD>{{form.date_to_arrive}}</TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.departure_date.label}}  </TD>
-                        <TD> {{form.departure_date}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'> {{form.transportation.label}}  </TD>
-                        <TD> {{form.transportation}} </TD>
-                    </TR>
-                    <TR>
-                        <TD class='label'>   </TD>
-                        <TD><input id='id_submit' type='submit' value = 'Save'/></TD>
-                    </TR>
-
+                <TR>
+                    <TD class='label'> {{form.club_name.label}}  </TD>
+                    <TD> {{form.club_name}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label' > {{form.zone.label}} </TD>
+                    <TD>  {{form.zone}}</TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.district.label}}</TD>
+                    <TD> {{form.district}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.date_to_arrive.label}} </TD>
+                    <TD>{{form.date_to_arrive}}</TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.departure_date.label}}  </TD>
+                    <TD> {{form.departure_date}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'> {{form.transportation.label}}  </TD>
+                    <TD> {{form.transportation}} </TD>
+                </TR>
+                <TR>
+                    <TD class='label'>   </TD>
+                    <TD><input id='id_submit' type='submit' value = 'Save'/></TD>
+                </TR>
             </table>
         </div>
         <div id='bas'>
@@ -122,11 +120,9 @@
         </div>
         <script type="text/javascript">
            $('#id_departure_date , #id_date_to_arrive').datepicker({ dateFormat: 'dd/mm/yy',
-                                      showButtonPanel: true,
-                                      closeText: 'X',showOn: "button",
-                                        buttonImage: "/static/css/images/calendar.gif",
-
-                                    });
+                                    closeText: 'X',showOn: "button",
+                                    buttonImage: "/static/css/images/calendar.gif",
+            });
         </script>
     </form>
 {% endblock %}

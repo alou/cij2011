@@ -71,8 +71,6 @@ body{margin: 0 auto;
 #registered  {margin: 0 auto;}
 #registered #left {float:left; width: 360px;}
 
-#registered #registered_form ul{
-            display : none;}
 #registered #registered_form  input[id="id_last_name"], input[id="id_first_name"], input[id="id_country"], input[id="id_city"], input[id="id_nationality"], input[id="id_email"]{
             width: 100px; margin-left: 20px}
 
@@ -104,46 +102,46 @@ body{margin: 0 auto;
 
 /* defilement images */
 #home #gallery {
-	position:relative;
-	height:360px
+    position:relative;
+    height:360px
 }
 #home #gallery {margin: 0 auto;height: 200px;
-	width: 581px;
+    width: 581px;
 }
-	#home #gallery a {
-		float:left;
-		position:absolute;
-	}
-	
-	#home #gallery a img {
-		border:none;
-	}
-	
-	#home #gallery a.show {
-		z-index:500
-	}
+    #home #gallery a {
+        float:left;
+        position:absolute;
+    }
 
-	#home #gallery .caption {
-		z-index:600; 
-		background-color:#000; 
-		color:#ffffff; 
-		height:100px; 
-		width:100%; 
-		position:absolute;
-		bottom:0;
-	}
+    #home #gallery a img {
+        border:none;
+    }
 
-	#home #gallery .caption .content {
-		margin:5px
-	}
-	
-	#home #gallery .caption .content h3 {
-		margin:0;
-		padding:0;
-		color:#1DCCEF;
-	}
-	
-	
+    #home #gallery a.show {
+        z-index:500
+    }
+
+    #home #gallery .caption {
+        z-index:600;
+        background-color:#000;
+        color:#ffffff;
+        height:100px;
+        width:100%;
+        position:absolute;
+        bottom:0;
+    }
+
+    #home #gallery .caption .content {
+        margin:5px
+    }
+
+    #home #gallery .caption .content h3 {
+        margin:0;
+        padding:0;
+        color:#1DCCEF;
+    }
+
+
 /* Club */
 .onglet
         {

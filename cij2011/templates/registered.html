@@ -37,44 +37,68 @@
 
                         <TD class='label'> {{form.last_name.label}} </TD>
                         <TD> {{form.last_name}} </TD>
-                        <TD>{% if form.last_name.errors%}
-                            <img src="/static/css/images/calendar.gif" width="20"  title="Ce champ est obligatoire." >
-                        {% endif %}</TD>
+                        <TD>
+                            {% if form.last_name.errors%}
+                                {% for error in form.last_name.errors %}
+                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                {% endfor %}
+                            {% endif %}
+                        </TD>
                     </TR>
                     <TR>
                         <TD class='label'> {{form.first_name.label}}</TD>
                         <TD>  {{form.first_name}}</TD>
-                        <TD>{% if form.first_name.errors%}
-                            <img src="/static/css/images/calendar.gif" width="20"  title="Ce champ est obligatoire." >
-                        {% endif %}</TD>
+                        <TD>
+                            {% if form.first_name.errors%}
+                                {% for error in form.first_name.errors %}
+                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                {% endfor %}
+                            {% endif %}
+                        </TD>
                     </TR>
                     <TR>
                         <TD class='label'> {{form.country.label}} </TD>
                         <TD> {{form.country}} </TD>
-                        <TD>{% if form.country.errors%}
-                            <img src="/static/css/images/calendar.gif" width="20"  title="Ce champ est obligatoire." >
-                        {% endif %}</TD>
+                        <TD>
+                            {% if form.country.errors%}
+                                {% for error in form.country.errors %}
+                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                {% endfor %}
+                            {% endif %}
+                        </TD>
                     </TR>
                     <TR>
                         <TD class='label'> {{form.city.label}} </TD>
                         <TD> {{form.city}} </TD>
-                        <TD>{% if form.city.errors%}
-                            <img src="/static/css/images/calendar.gif" width="20"  title="Ce champ est obligatoire." >
-                        {% endif %}</TD>
+                        <TD>
+                            {% if form.city.errors%}
+                                {% for error in form.city.errors %}
+                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                {% endfor %}
+                            {% endif %}
+                        </TD>
                     </TR>
                     <TR>
                         <TD class='label'> {{form.nationality.label}} </TD>
                         <TD> {{form.nationality}} </TD>
-                        <TD>{% if form.nationality.errors%}
-                            <img src="/static/css/images/calendar.gif" width="20"  title="Ce champ est obligatoire." >
-                        {% endif %}</TD>
+                        <TD>
+                            {% if form.nationality.errors%}
+                                {% for error in form.nationality.errors %}
+                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                {% endfor %}
+                            {% endif %}
+                        </TD>
                     </TR>
                     <TR>
                         <TD class='label'> {{form.email.label}} </TD>
                         <TD> {{form.email}}</TD>
-                        <TD>{% if form.email.errors%}
-                            <img src="/static/css/images/calendar.gif" width="20"  title="Ce champ est obligatoire." >
-                        {% endif %}</TD>
+                        <TD>
+                            {% if form.email.errors%}
+                                {% for error in form.email.errors %}
+                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                {% endfor %}
+                            {% endif %}
+                        </TD>
                     </TR>
             </table>
 

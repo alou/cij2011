@@ -7,3 +7,6 @@ from cij.models import *
 
 admin.site.register(Pamper)
 admin.site.register(Club)
+admin.site.register(Country)
+admin.site.register(Nationality)
+admin.site.register(Transportation)

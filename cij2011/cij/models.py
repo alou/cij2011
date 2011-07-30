@@ -23,6 +23,27 @@ class Club(models.Model):
         return u'%(name)s' % {"name": self.name}
 
 
+class Country(models.Model):
+    """ Info of country """
+    name = models.CharField(max_length=30, verbose_name=("Name"))
+    def __unicode__(self):
+        return u'%(name)s' % {"name": self.name}
+
+
+class Nationality(models.Model):
+    """ Info of nationality """
+    name = models.CharField(max_length=30, verbose_name=("Name"))
+    def __unicode__(self):
+        return u'%(name)s' % {"name": self.name}
+
+
+class Transportation(models.Model):
+    """ Info of transportation """
+    name = models.CharField(max_length=30, verbose_name=("Name"))
+    def __unicode__(self):
+        return u'%(name)s' % {"name": self.name}
+
+
 class Pamper(models.Model):
     """ Camper registered
     """
@@ -30,18 +51,21 @@ class Pamper(models.Model):
     first_name = models.CharField(max_length=30, verbose_name=("Prénom"))
     last_name = models.CharField(max_length=30, verbose_name=("Nom"))
     language = models.CharField(max_length=30, verbose_name=("Language"))
-    nationality = models.CharField(max_length=30, verbose_name=("Nationalite"))
+    nationality = models.ForeignKey(Nationality, related_name='nationality',\
+                                     verbose_name=("Nationalite"))
     city = models.CharField(max_length=30, verbose_name=("Ville"))
     email = models.EmailField(blank=True, verbose_name=("Email"))
     club_name = models.CharField(max_length=50, verbose_name=("Nom du club"))
     zone = models.IntegerField(verbose_name=("Zone"))
     district = models.CharField(max_length=5, verbose_name=("District"))
-    country = models.CharField(max_length=50, verbose_name=("Pays"))
+    country = models.ForeignKey(Country, related_name='country',\
+                                     verbose_name=("Pays"))
     date_to_arrive = models.DateField(verbose_name=("Date d'arrivee"),\
                              default=datetime.datetime.today)
     departure_date = models.DateField(verbose_name=("Date de depart"),\
                              default=datetime.datetime.today)
-    transportation = models.CharField(max_length=20, verbose_name=("Moyen de transport"))
+    transportation = models.ForeignKey(Transportation, related_name='transportation',\
+                                     verbose_name=("Moyen de transport"))
     def __unicode__(self):
         return u'%(first_name)s %(last_name)s ' % {"first_name": self.first_name,
                                                    "last_name": self.last_name}

@@ -1,0 +1,29 @@
+<table id="click_table">
+    <th>title</th>
+    <th>last_name</th>
+    <th>First name</th>
+    <th>country</th>
+    <th>city</th>
+    <th>nationality</th>
+    <th>club_name</th>
+    <th>language</th>
+    <th>date_to_arrive</th>
+    <th>departure_date</th>
+    <th>transportation</th>
+    {% for p in pampers %}
+        <tr>
+            <td>{{p.title}}</td>
+            <td>{{p.last_name}}</td>
+            <td>{{p.first_name}}</td>
+            <td>{{p.country}}</td>
+            <td>{{p.city}}</td>
+            <td>{{p.nationality}}</td>
+            <td>{{p.club_name}}</td>
+            <td>{{p.language}}</td>
+            <td>{{p.date_to_arrive}}</td>
+            <td>{{p.departure_date}}</td>
+            <td>{{p.transportation}}</td>
+
+        </tr>
+    {% endfor %}
+</table>

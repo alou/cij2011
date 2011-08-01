@@ -131,6 +131,16 @@ def club(request):
 
     return render_to_response('club.html', c)
 
+def pampers(request):
+    """
+    """
+    pampers = Pamper.objects.all()
+    c = {}
+    c.update(csrf(request))
+    c.update({'pampers': pampers})
+
+    return render_to_response('pampers.html', c)
+
 def contact(request):
     """
     """

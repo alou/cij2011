@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Display{% endblock %}
+{% block page-id %}display{% endblock %}
+{% block content %}
+
+    <div id="leo"><img id='image_left' border="0" style="float:right" src="/static/css/images/Leo-Logo-Color.png" width="150"></div>
+    <div id="lion"><img id='image_right' border="0" style="float:left" src="/static/css/images/logo_Lions.jpg" width="150"></div>
+    <div id='menu'>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li class="current_page_item"><a href="#">Confirmation</a></li>
+            <li><a href="{% url club %}">Club Leo</a></li>
+            <li><a href="{% url contact %}">Contact</a></li>
+        </ul>
+    </div>
+    <div id='left'>
+        <table>
+            <TR>
+                <TD class='label'> Titre </TD>
+                <TD>{{pamper.title}}</TD>
+            </TR>
+            <TR>
+                <TD class='label'> Nom </TD>
+                <TD>{{pamper.last_name}}</TD>
+            </TR>
+            <TR>
+                <TD class='label'> Prenom </TD>
+                <TD>{{pamper.first_name}}</TD>
+            </TR>
+
+             <TR>
+                <TD class='label'>Pays</TD>
+                <TD> {{pamper.country}} </TD>
+            </TR>
+            <TR>
+                <TD class='label'> Ville </TD>
+                <TD> {{pamper.city}} </TD>
+            </TR>
+            <TR>
+                <TD class='label'> Nationalité </TD>
+                <TD> {{pamper.nationality}} </TD>
+            </TR>
+            <TR>
+                <TD class='label'> E-mail </TD>
+                <TD> {{pamper.email}} </TD>
+            </TR>
+        </table>
+    </div>
+    <div id='right'>
+        <table>
+            <TR>
+                <TD class='label'> Langue </TD>
+                <TD>{{pamper.language}}</TD>
+            </TR>
+            <TR>
+                <TD class='label'> Club </TD>
+                <TD>{{pamper.club_name}}</TD>
+            </TR>
+            <TR>
+                <TD class='label'> Zone </TD>
+                <TD>{{pamper.zone}}</TD>
+            </TR>
+             <TR>
+                <TD class='label'>District</TD>
+                <TD> {{pamper.district}} </TD>
+            </TR>
+            <TR>
+                <TD class='label'> Date d'arriver </TD>
+                <TD> {{pamper.date_to_arrive}} </TD>
+            </TR>
+            <TR>
+                <TD class='label'> Date de depart </TD>
+                <TD> {{pamper.departure_date}} </TD>
+            </TR>
+            <TR>
+                <TD class='label'> Moyen de transport </TD>
+                <TD> {{pamper.transportation}} </TD>
+            </TR>
+            <TR>
+                <TD>  <a href="{% url pampers %}">OK</a> </TD>
+            </TR>
+        </table>
+    </div>
+{% endblock %}

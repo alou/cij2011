@@ -50,7 +50,7 @@ class Pamper(models.Model):
     title = models.CharField(max_length=2, verbose_name=("Title"))
     first_name = models.CharField(max_length=30, verbose_name=("Prénom"))
     last_name = models.CharField(max_length=30, verbose_name=("Nom"))
-    language = models.CharField(max_length=30, verbose_name=("Language"))
+    language = models.CharField(max_length=30, verbose_name=("Langue"))
     nationality = models.ForeignKey(Nationality, related_name='nationality',\
                                      verbose_name=("Nationalite"))
     city = models.CharField(max_length=30, verbose_name=("Ville"))

@@ -6,6 +6,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.shortcuts import (render_to_response,
                               HttpResponseRedirect, redirect)
 from django.core.urlresolvers import reverse
+from django.core.paginator import Paginator, EmptyPage
 from cij.models import *
 from cij.form import PamperForm
 
@@ -52,7 +53,6 @@ def confirmation(request, *args, **kwargs):
     num = kwargs["num"] or 1
     c = {}
     pamper = Pamper.objects.filter(id=num)[0]
-    print pamper.id
     pamper.url = reverse('correction', args=[pamper.id])
     c.update(csrf(request))
     c.update({'pamper': pamper})
@@ -131,13 +131,37 @@ def club(request):
 
     return render_to_response('club.html', c)
 
-def pampers(request):
+def pampers(request, *args, **kwargs):
     """
     """
-    pampers = Pamper.objects.all()
-    c = {}
+    num = kwargs["num"] or 1
+    pampers = Pamper.objects.all().order_by('-last_name', '-first_name')
+
+    for pamper in pampers:
+        pamper.url_display = reverse('display',
+                                         args=[pamper.id])
+
+    paginator = Paginator(pampers, 1)
+
+    page = paginator.page(int(num))
+    # si le numero de la page est 2
+    page.is_before_first = (page.number == 2)
+    # si le numero de la page est egale au numero de l'avant
+    # derniere page
+    page.is_before_last = (page.number == paginator.num_pages - 1)
+    # on constitue l'url de la page suivante
+    page.url_next = reverse('pampers', args=[int(num) + 1])
+    # on constitue l'url de la page precedente
+    page.url_previous = reverse('pampers', args=[int(num) - 1])
+    # on constitue l'url de la 1ere page
+    page.url_first = reverse('pampers')
+    # on constitue l'url de la derniere page
+    page.url_last = reverse('pampers',
+                            args=[paginator.num_pages])
+    c = {  'paginator': paginator,
+           'page': page}
+
     c.update(csrf(request))
-    c.update({'pampers': pampers})
 
     return render_to_response('pampers.html', c)
 
@@ -147,3 +171,13 @@ def contact(request):
     c = {}
     c.update(csrf(request))
     return render_to_response('contact.html', c)
+
+def display(request, *args, **kwargs):
+    """
+    """
+    num = kwargs["id"]
+    pamper = Pamper.objects.get(id=num)
+    c = {'pamper': pamper}
+    c.update(csrf(request))
+    c.update({'pamper': pamper})
+    return render_to_response('display.html', c)

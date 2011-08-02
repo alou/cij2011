@@ -1,29 +1,56 @@
-<table id="click_table">
-    <th>title</th>
-    <th>last_name</th>
-    <th>First name</th>
-    <th>country</th>
-    <th>city</th>
-    <th>nationality</th>
-    <th>club_name</th>
-    <th>language</th>
-    <th>date_to_arrive</th>
-    <th>departure_date</th>
-    <th>transportation</th>
-    {% for p in pampers %}
-        <tr>
-            <td>{{p.title}}</td>
-            <td>{{p.last_name}}</td>
-            <td>{{p.first_name}}</td>
-            <td>{{p.country}}</td>
-            <td>{{p.city}}</td>
-            <td>{{p.nationality}}</td>
-            <td>{{p.club_name}}</td>
-            <td>{{p.language}}</td>
-            <td>{{p.date_to_arrive}}</td>
-            <td>{{p.departure_date}}</td>
-            <td>{{p.transportation}}</td>
+{% extends "base.html" %}
+{% block title %}Pampers{% endblock %}
+{% block page-id %}pampers{% endblock %}
 
-        </tr>
-    {% endfor %}
-</table>
+{% block content %}
+
+    <div id="lion"><img id='image_right' border="0" style="float:left" src="/static/css/images/logo_Lions.jpg" width="150"></div>
+    <div id="leo"><img id='image_left' border="0" style="float:right" src="/static/css/images/Leo-Logo-Color.png" width="150"></div>
+    <div id='menu'>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li class="current_page_item"><a href="#">Liste des inscrits</a></li>
+        </ul>
+    </div>
+    {% if page.object_list %}
+        <div id="cij-pagination" class="prepend-16">
+            <span>{% include "_cij_pagination.html" %}</span>
+        </div>
+        <table id="click_table">
+            <thead>
+                <th>Titre</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Nationalite</th>
+                <th>Nom du club</th>
+                <th>Langue</th>
+                <th>Date d'arrivee</th>
+                <th>Date de depart</th>
+                <th>Moyen de transport</th>
+            </thead>
+            <tbody>
+                {% for p in page.object_list %}
+
+                    <tr>
+                        <td><a href="{{p.url_display }}">{{p.title}}</a></td>
+                        <td>{{p.last_name}}</td>
+                        <td>{{p.first_name}}</td>
+                        <td>{{p.country}}</td>
+                        <td>{{p.city}}</td>
+                        <td>{{p.nationality}}</td>
+                        <td>{{p.club_name}}</td>
+                        <td>{{p.language}}</td>
+                        <td>{{p.date_to_arrive}}</td>
+                        <td>{{p.departure_date}}</td>
+                        <td>{{p.transportation}}</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    {%endif%}
+
+{% endblock %}

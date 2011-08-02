@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Club{% endblock %}
+{% block page-id %}club{% endblock %}
+{% block content %}
+    {{state}}
+    <ul id="menu_login">
+        <form action="{% url login %}" method="post">{% csrf_token %}
+            <div>{{ form.as_ul }}</div>
+            <span class ="span-4">
+                <input id = 'id_Connexion' type="submit" value="Se connecter" >
+            </span>
+        </form>
+    </ul>
+{% endblock %}

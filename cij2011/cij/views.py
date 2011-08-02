@@ -6,13 +6,16 @@ from django.utils.datastructures import MultiValueDictKeyError
 from django.shortcuts import (render_to_response,
                               HttpResponseRedirect, redirect)
 from django.core.urlresolvers import reverse
+from django.contrib.auth import (authenticate, login as django_login,
+                                 logout as django_logout)
 from django.core.paginator import Paginator, EmptyPage
 from cij.models import *
-from cij.form import PamperForm
+from cij.form import PamperForm, LoginForm
 
 def home(request):
     """
     """
+
     pamper_count = Pamper.objects.all().count()
 
     return render_to_response('home.html', {'pamper_count': pamper_count})
@@ -93,17 +96,18 @@ def correction(request, *args, **kwargs):
                     dnew_format = year + '-' + month + '-' + day
 
             if 'language' in request.POST and 'title' in request.POST and form.is_valid() :
+
                 pamper.title = request.POST['title']
                 pamper.first_name = request.POST['first_name']
                 pamper.last_name = request.POST['last_name']
                 pamper.language = request.POST['language']
-                pamper.nationality = request.POST['nationality']
+                pamper.nationality = form.cleaned_data['nationality']
                 pamper.city = request.POST['city']
                 pamper.email = request.POST['email']
                 pamper.club_name = request.POST['club_name']
                 pamper.zone = request.POST['zone']
                 pamper.district = request.POST['district']
-                pamper.country = request.POST['country']
+                pamper.country = form.cleaned_data['country']
                 pamper.date_to_arrive = anew_format
                 pamper.departure_date = dnew_format
                 pamper.transportation = form.cleaned_data['transportation']
@@ -131,9 +135,47 @@ def club(request):
 
     return render_to_response('club.html', c)
 
+def login(request):
+    """
+    """
+
+    c = {}
+    c.update(csrf(request))
+    state = "Se connecter"
+
+    form = LoginForm()
+    c.update({'form': form, 'state': state})
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                django_login(request, user)
+                return HttpResponseRedirect(reverse('pampers'))
+            else:
+                state = "Your Account is not active,\
+                                    please contact the site admin."
+        else:
+            state = u"Votre nom d'utilisateur et / ou \
+                                votre mot de passe est incorrect. \
+                                Veuillez réessayer."
+        c.update({'form': form, 'state': state})
+    return render_to_response('login.html', c)
+
+def logout(request):
+    """
+        logout est la views qui permet de se deconnecter
+    """
+
+    django_logout(request)
+    return redirect("login")
+
 def pampers(request, *args, **kwargs):
     """
     """
+    user = request.user
     num = kwargs["num"] or 1
     pampers = Pamper.objects.all().order_by('-last_name', '-first_name')
 
@@ -158,8 +200,9 @@ def pampers(request, *args, **kwargs):
     # on constitue l'url de la derniere page
     page.url_last = reverse('pampers',
                             args=[paginator.num_pages])
-    c = {  'paginator': paginator,
-           'page': page}
+    c = {'paginator': paginator,
+         'user': user,
+         'page': page}
 
     c.update(csrf(request))
 

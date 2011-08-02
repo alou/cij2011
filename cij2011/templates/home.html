@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}Accueil{% endblock %}
 {% block page-id %}home{% endblock %}
 {% block content %}
 <script type="text/javascript" src="/static/js/jquery-1.3.1.min.js"></script>
@@ -70,12 +70,11 @@ function gallery() {
             <li class="current_page_item"><a href="/">Accueil</a></li>
             <li><a href="{% url registered %}">Inscription</a></li>
             <li><a href="{% url club %}">Club Leo</a></li>
-            <li><a href="{% url contact %}">Contact</a></li>
         </ul>
     </div>
    <div id="gallery">
         <a href="#" class="show">
-            <img src="/static/css/images/flowing-rock.jpg" alt="Flowing Rock" width="500" height="200" title="" alt="" rel="<h3>Alou le Best</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "/>
+            <img src="/static/css/images/flowing-rock.jpg" alt="Flowing Rock" width="500" height="200" title="" alt="" rel="<h3>Alou le Best</h3>Le corps"/>
         </a>
         <a href="#">
             <img src="/static/css/images/grass-blades.jpg" alt="Grass Blades" width="500" height="200" title="" alt="" rel="<h3>Grass Blades</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "/>
@@ -111,8 +110,10 @@ function gallery() {
 
         <p>Cet accueil des Clubs et de notre District est une action sociale pour la Jeunesse en faveur de l'amitié entre les peuples et la connaissance de notre pays. C'est une expérience culturelle et amicale car ce camp accueillera des jeunes venant de différents pays.</p>
 
-        <p>Pour participer au camp veuillez remplir le formulaire d'inscription dans la rubrique "Inscriptions" de notre site. Les formailtés d'entrée au Mali y sont également précisées.</p>
+        <p>Pour participer au camp veuillez remplir le formulaire d'inscription dans la rubrique "Inscription" de notre site. Les formailtés d'entrée au Mali y sont également précisées.</p>
 
         <p>A très bientôt.</p>
+        <a href = "{% url login %}">login</a>
+
     </div>
 {% endblock %}

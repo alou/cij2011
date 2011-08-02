@@ -12,6 +12,9 @@
             <li class="current_page_item"><a href="#">Liste des inscrits</a></li>
         </ul>
     </div>
+    <div id="bienvenu">
+        <span>{% include "_bienvenu_utilisateur.html" %}</span>
+    </div>
     {% if page.object_list %}
         <div id="cij-pagination" class="prepend-16">
             <span>{% include "_cij_pagination.html" %}</span>

@@ -15,6 +15,8 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r"^$", "cij.views.home", name="home"),
+    url(r"^login$", "cij.views.login", name="login"),
+    url(r"^logout$", "cij.views.logout", name="logout"),
     url(r"^registered/$", "cij.views.registered", name="registered"),
     url(r"^club/$", "cij.views.club", name="club"),
     url(r"^pampers/(?P<num>\d+)*$", "cij.views.pampers", name="pampers"),

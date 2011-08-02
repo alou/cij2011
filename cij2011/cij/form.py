@@ -17,3 +17,8 @@ class PamperForm(forms.ModelForm):
         self.instance.title = self.data['title']
         self.instance.language = self.data['language']
         return forms.ModelForm.save(self, *args, **kwargs)
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=100, label="Username")
+    password = forms.CharField(max_length=100, label="Password",\
+                               widget=forms.PasswordInput)

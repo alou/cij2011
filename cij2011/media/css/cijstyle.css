@@ -69,23 +69,43 @@ body{margin: 0 auto;
 
 /* Registered */
 #registered  {margin: 0 auto;}
-#registered #left {float:left; width: 360px;}
+#registered  #registered_form{  margin-left: 97px;
+    margin-top: 121px;
+    width: 832px;}
+#registered #left {float:left; width: 320px;}
 
-#registered #registered_form  input[id="id_last_name"], input[id="id_first_name"], select[id="id_country"], input[id="id_city"], select[id="id_nationality"], input[id="id_email"]{
+#registered #registered_form  input[id="id_last_name"],
+                              input[id="id_first_name"],
+                              select[id="id_country"],
+                              input[id="id_city"],
+                              select[id="id_nationality"],
+                              input[id="id_email"]{
             width: 100px; margin-left: 20px}
 
-#registered #registered_form input[id="id_num_passport"],input[id="id_club_name"],input[id="id_zone"],input[id="id_district"], input[id="id_date_to_arrive"],input[id="id_departure_date"], select[id="id_transportation"], input[id="id_submit"]{
+#registered #registered_form input[id="id_num_passport"],
+                             input[id="id_club_name"],
+                             input[id="id_zone"],
+                             input[id="id_district"],
+                             input[id="id_date_to_arrive"],
+                             input[id="id_departure_date"],
+                             select[id="id_transportation"],
+                             input[id="id_submit"]{
             width: 100px;margin-left: 20px
             }
 .label{font-family: times New Roman;font-weight: bold;
-    font-size: 20px;}
+    font-size: 20px; width: 290px;}
+.text{font-family: times New Roman; font-size: 16px;}
 .error{font-family: times New Roman;font-weight: bold;
     font-size: 15px;}
 
 
 /* Confirmation */
-#coonfirmation  {margin: 0 auto;}
-#coonfirmation #left {float:left; width: 360px;}
+#coonfirmation #right table{ width: 430px;}
+#coonfirmation #right { float: right;
+    margin-top: -190px;margin-right: 65px;}
+
+#coonfirmation #left {margin-top: 110px;}
+
 
 /* display */
 #display  {margin: 0 auto;}
@@ -93,13 +113,28 @@ body{margin: 0 auto;
 
 /* correction */
 #correction  {margin: 0 auto;}
-#correction #left {float:left; width: 360px;}
+#correction  #registered_form{  margin-left: 97px;
+    margin-top: 121px;
+    width: 832px;}
+#correction #left {float:left; width: 300px;}
 #correction #registered_form ul{
             display : none;}
-#correction #registered_form  input[id="id_last_name"], input[id="id_first_name"], input[id="id_country"], input[id="id_city"], input[id="id_nationality"], input[id="id_email"]{
+#correction #registered_form  input[id="id_last_name"],
+                              input[id="id_first_name"],
+                              input[id="id_country"],
+                              input[id="id_city"],
+                              input[id="id_nationality"],
+                              input[id="id_email"]{
             width: 100px; margin-left: 20px}
 
-#correction #registered_form input[id="id_num_passport"],input[id="id_club_name"],input[id="id_zone"],input[id="id_district"], input[id="id_date_to_arrive"],input[id="id_departure_date"], input[id="id_transportation"], input[id="id_submit"]{
+#correction #registered_form input[id="id_num_passport"],
+                             input[id="id_club_name"],
+                             input[id="id_zone"],
+                             input[id="id_district"],
+                             input[id="id_date_to_arrive"],
+                             input[id="id_departure_date"],
+                             input[id="id_transportation"],
+                             input[id="id_submit"]{
             width: 100px;margin-left: 20px
             }
 
@@ -158,14 +193,18 @@ body{margin: 0 auto;
         }
         .onglet_0
         {
-                background:#bbbbbb;
+                background:#F7CA86;
                 border-bottom:1px solid black;
+                font-size: 25px;
+
         }
         .onglet_1
         {
-                background:#dddddd;
+                background:#FDEFDB;
                 border-bottom:0px solid black;
                 padding-bottom:4px;
+                font-size: 25px;
+                font-weight: bold
         }
         .contenu_onglet
         {
@@ -174,6 +213,7 @@ body{margin: 0 auto;
                 margin-top:-1px;
                 padding:5px;
                 display:none;
+                background:#FDEFDB;
         }
         ul
         {
@@ -188,9 +228,13 @@ body{margin: 0 auto;
         }
 
 #club h2 {margin: 0 auto;width: 224px;}
-#club #bottom{margin-left: 131px;}
+#club #top{margin: 0 auto;}
+#club .systeme_onglets{margin-top: 85px; width: 668px;margin-left: 158px;}
 
 #pampers #cij-pagination li{margin-left: 1ex;display: inline;}
+
+#pampers #bienvenu{ margin-right: 24px;
+    margin-top: -115px;float: right}
 
 #pampers #cij-pagination ul{padding-top: 16px;}
 

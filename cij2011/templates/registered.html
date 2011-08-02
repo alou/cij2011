@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Registered{% endblock %}
+{% block title %}Inscription{% endblock %}
 {% block page-id %}registered{% endblock %}
 {% block content %}
 
@@ -10,7 +10,6 @@
             <li><a href="/">Accueil</a></li>
             <li class="current_page_item"><a href="{% url registered %}">Inscription</a></li>
             <li><a href="{% url club %}">Club Leo</a></li>
-            <li><a href="{% url contact %}">Contact</a></li>
         </ul>
     </div>
     <form action="" method="post" id="registered_form">{% csrf_token %}
@@ -137,22 +136,57 @@
                 <TR>
                     <TD class='label'> {{form.club_name.label}}  </TD>
                     <TD> {{form.club_name}} </TD>
+                    <TD>
+                        {% if form.club_name.errors%}
+                            {% for error in form.club_name.errors %}
+                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                            {% endfor %}
+                        {% endif %}
+                    </TD>
                 </TR>
                 <TR>
                     <TD class='label' > {{form.zone.label}} </TD>
                     <TD>  {{form.zone}}</TD>
+                    <TD>
+                        {% if form.zone.errors%}
+                            {% for error in form.zone.errors %}
+                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                            {% endfor %}
+                        {% endif %}
+                    </TD>
                 </TR>
                 <TR>
                     <TD class='label'> {{form.district.label}}</TD>
                     <TD> {{form.district}} </TD>
+                    <TD>
+                        {% if form.district.errors%}
+                            {% for error in form.district.errors %}
+                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                            {% endfor %}
+                        {% endif %}
+                    </TD>
                 </TR>
                 <TR>
                     <TD class='label'> {{form.date_to_arrive.label}} </TD>
                     <TD>{{form.date_to_arrive}}</TD>
+                    <TD>
+                        {% if form.date_to_arrive.errors%}
+                            {% for error in form.date_to_arrive.errors %}
+                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                            {% endfor %}
+                        {% endif %}
+                    </TD>
                 </TR>
                 <TR>
                     <TD class='label'> {{form.departure_date.label}}  </TD>
                     <TD> {{form.departure_date}} </TD>
+                    <TD>
+                        {% if form.departure_date.errors%}
+                            {% for error in form.departure_date.errors %}
+                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                            {% endfor %}
+                        {% endif %}
+                    </TD>
                 </TR>
                 <TR>
                     <TD class='label'> {{form.transportation.label}}  </TD>
@@ -163,6 +197,12 @@
                     <TD><input id='id_submit' type='submit' value = 'Valider'/></TD>
                 </TR>
             </table>
+        </div>
+        <div id ='bas'>
+            <p>Frais d'inscription 75 000</p>
+            <p>A virer sur le compte ...............................</p>
+            <p>Ces frais inclicluent: repas durant le camp - hebergement - transport en car durant le camp - doccumentation - sac de campement</p>
+            <p>Dernier delai d'inscription ..........</p>
         </div>
         <script type="text/javascript">
            $('#id_departure_date , #id_date_to_arrive').datepicker({

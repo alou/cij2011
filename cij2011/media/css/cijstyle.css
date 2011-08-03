@@ -3,13 +3,26 @@ Design by Alou and Fad
 */
 body{margin: 0 auto;
      width: 980px;}
-
+a {color: #003871;
+    text-decoration: none;}
 
 #home #content h1{text-align: center;
                   font-size: 50px;
                   }
 #home #content h2{font-size: 30px;}
 #home #content p{font-size: 20px;}
+/* Login */
+#alou {margin: 0 auto;
+       width: 480px;}
+#alou li{display: -moz-stack;}
+#alou label{font-size:20px;
+            font-weight: bold;
+            font-family: times New Roman}
+#alou label[for="id_password"]{margin-right: 56px;}
+#alou label[for="id_username"]{margin-right: 22px;}
+#alou input[id="id_Connexion"]{margin-left: 263px;}
+
+
 
 /* Menu */
 
@@ -72,7 +85,7 @@ body{margin: 0 auto;
 #registered  #registered_form{  margin-left: 97px;
     margin-top: 121px;
     width: 832px;}
-#registered #left {float:left; width: 320px;}
+#registered #left {float:left; width: 400px;}
 
 #registered #registered_form  input[id="id_last_name"],
                               input[id="id_first_name"],
@@ -93,18 +106,23 @@ body{margin: 0 auto;
             width: 100px;margin-left: 20px
             }
 .label{font-family: times New Roman;font-weight: bold;
-    font-size: 20px; width: 290px;}
+    font-size: 20px; width: 180px;}
 .text{font-family: times New Roman; font-size: 16px;}
 .error{font-family: times New Roman;font-weight: bold;
     font-size: 15px;}
 
 
 /* Confirmation */
-#coonfirmation #right table{ width: 430px;}
-#coonfirmation #right { float: right;
-    margin-top: -190px;margin-right: 65px;}
+#coonfirmation #right table{width: 430px;}
+#coonfirmation #right {float: right;
+                       width: 410px;
+                       margin-top: -190px;
+                       margin-right: 65px;
+                       }
 
-#coonfirmation #left {margin-top: 110px;}
+#coonfirmation #left {margin-top: 110px;
+                      margin-left: 166px}
+#coonfirmation #left {width: 410px;}
 
 
 /* display */
@@ -116,7 +134,7 @@ body{margin: 0 auto;
 #correction  #registered_form{  margin-left: 97px;
     margin-top: 121px;
     width: 832px;}
-#correction #left {float:left; width: 300px;}
+#correction #left {float:left; width: 400px;}
 #correction #registered_form ul{
             display : none;}
 #correction #registered_form  input[id="id_last_name"],
@@ -145,7 +163,7 @@ body{margin: 0 auto;
     height:360px
 }
 #home #gallery {margin: 0 auto;height: 200px;
-    width: 581px;
+    width: 500px;
 }
     #home #gallery a {
         float:left;

@@ -1,14 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Club{% endblock %}
-{% block page-id %}club{% endblock %}
+{% block title %}Connexion{% endblock %}
+{% block page-id %}login{% endblock %}
 {% block content %}
-    {{state}}
-    <ul id="menu_login">
-        <form action="{% url login %}" method="post">{% csrf_token %}
-            <div>{{ form.as_ul }}</div>
-            <span class ="span-4">
-                <input id = 'id_Connexion' type="submit" value="Se connecter" >
-            </span>
-        </form>
-    </ul>
+    <div id="leo"><img id='image_left' border="0" style="float:right" src="/static/css/images/Leo-Logo-Color.png" width="150"></div>
+    <div id="lion"><img id='image_right' border="0" style="float:left" src="/static/css/images/logo_Lions.jpg" width="150"></div>
+    <div id='menu'>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li class="current_page_item"><a href="#">Connexion</a></li>
+        </ul>
+    </div>
+    <div id='alou'>
+        {{state}}
+        <ul id="menu_login">
+            <form action="{% url login %}" method="post">{% csrf_token %}
+                <div>{{ form.as_ul }}</div>
+                <span class ="span-4">
+                    <input id = 'id_Connexion' type="submit" value="Se connecter" >
+                </span>
+            </form>
+        </ul>
+    </div>
 {% endblock %}

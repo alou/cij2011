@@ -16,9 +16,11 @@ class Club(models.Model):
     president = models.CharField(max_length=60, verbose_name=("President"))
     secretary = models.CharField(max_length=60, verbose_name=("Secretary"))
     treasurer = models.CharField(max_length=60, verbose_name=("Treasurer"))
-    director_of_Staff = models.CharField(max_length=60, verbose_name=("Director of Staff"))
+    director_of_Staff = models.CharField(max_length=60,
+                                         verbose_name=("Director of Staff"))
     protocol = models.CharField(max_length=60, verbose_name=("Protocol"))
     seat = models.CharField(max_length=60, verbose_name=("Seat"))
+
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
 
@@ -26,6 +28,7 @@ class Club(models.Model):
 class Country(models.Model):
     """ Info of country """
     name = models.CharField(max_length=30, verbose_name=("Name"))
+
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
 
@@ -33,6 +36,7 @@ class Country(models.Model):
 class Nationality(models.Model):
     """ Info of nationality """
     name = models.CharField(max_length=30, verbose_name=("Name"))
+
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
 
@@ -40,6 +44,7 @@ class Nationality(models.Model):
 class Transportation(models.Model):
     """ Info of transportation """
     name = models.CharField(max_length=30, verbose_name=("Name"))
+
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
 
@@ -64,8 +69,11 @@ class Pamper(models.Model):
                              default=datetime.datetime.today)
     departure_date = models.DateField(verbose_name=("Date de depart"),\
                              default=datetime.datetime.today)
-    transportation = models.ForeignKey(Transportation, related_name='transportation',\
-                                     verbose_name=("Moyen de transport"))
+    transportation = models.ForeignKey(Transportation,
+                                       related_name='transportation',\
+                                       verbose_name=("Moyen de transport"))
+
     def __unicode__(self):
-        return u'%(first_name)s %(last_name)s ' % {"first_name": self.first_name,
-                                                   "last_name": self.last_name}
+        return u'%(first_name)s %(last_name)s ' % \
+                                                {"first_name": self.first_name,
+                                                 "last_name": self.last_name}

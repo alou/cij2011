@@ -3,8 +3,6 @@
 {% block page-id %}correction{% endblock %}
 {% block content %}
 
-    <div id="leo"><img id='image_left' border="0" style="float:right" src="/static/css/images/Leo-Logo-Color.png" width="150"></div>
-    <div id="lion"><img id='image_right' border="0" style="float:left" src="/static/css/images/logo_Lions.jpg" width="150"></div>
     <div id='menu'>
         <ul>
             <li><a href="/">Accueil</a></li>
@@ -42,7 +40,7 @@
                         <TD>
                             {% if form.last_name.errors%}
                                 {% for error in form.last_name.errors %}
-                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                    <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                                 {% endfor %}
                             {% endif %}
                         </TD>
@@ -56,7 +54,7 @@
                         <TD>
                             {% if form.first_name.errors%}
                                 {% for error in form.first_name.errors %}
-                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                    <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                                 {% endfor %}
                             {% endif %}
                         </TD>
@@ -70,7 +68,7 @@
                         <TD>
                             {% if form.country.errors%}
                                 {% for error in form.country.errors %}
-                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                    <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                                 {% endfor %}
                             {% endif %}
                         </TD>
@@ -84,7 +82,7 @@
                         <TD>
                             {% if form.city.errors%}
                                 {% for error in form.city.errors %}
-                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                    <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                                 {% endfor %}
                             {% endif %}
                         </TD>
@@ -98,7 +96,7 @@
                         <TD>
                             {% if form.nationality.errors%}
                                 {% for error in form.nationality.errors %}
-                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                    <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                                 {% endfor %}
                             {% endif %}
                         </TD>
@@ -112,7 +110,7 @@
                         <TD>
                             {% if form.email.errors%}
                                 {% for error in form.email.errors %}
-                                    <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                    <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                                 {% endfor %}
                             {% endif %}
                         </TD>
@@ -139,7 +137,7 @@
                     <TD>
                         {% if form.club_name.errors%}
                             {% for error in form.club_name.errors %}
-                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                             {% endfor %}
                         {% endif %}
                     </TD>
@@ -150,7 +148,7 @@
                     <TD>
                         {% if form.zone.errors%}
                             {% for error in form.zone.errors %}
-                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                             {% endfor %}
                         {% endif %}
                     </TD>
@@ -161,7 +159,7 @@
                     <TD>
                         {% if form.district.errors%}
                             {% for error in form.district.errors %}
-                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                             {% endfor %}
                         {% endif %}
                     </TD>
@@ -172,7 +170,7 @@
                     <TD>
                         {% if form.date_to_arrive.errors%}
                             {% for error in form.date_to_arrive.errors %}
-                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                             {% endfor %}
                         {% endif %}
                     </TD>
@@ -183,7 +181,7 @@
                     <TD>
                         {% if form.departure_date.errors%}
                             {% for error in form.departure_date.errors %}
-                                <img src="/static/css/images/error.png" width="20"  title="{{error}}" >
+                                <img src="/static/css/images/error.png" width="16"  title="{{error}}" >
                             {% endfor %}
                         {% endif %}
                     </TD>
@@ -204,4 +202,5 @@
             });
         </script>
     </form>
+
 {% endblock %}

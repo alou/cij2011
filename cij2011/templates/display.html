@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Confirmation{% endblock %}
-{% block page-id %}coonfirmation{% endblock %}
+{% block title %}Display{% endblock %}
+{% block page-id %}display{% endblock %}
 {% block content %}
 
     <div id='menu'>
@@ -74,8 +74,7 @@
                 <TD> {{pamper.transportation}} </TD>
             </TR>
             <TR>
-                <TD> <a href="{{pamper.url}}">Corriger</a></TD>
-                <TD>  <a href="/">OK</a> </TD>
+                <TD>  <a href="{% url pampers %}">OK</a> </TD>
             </TR>
         </table>
     </div>

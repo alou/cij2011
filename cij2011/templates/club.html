@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Club{% endblock %}
+{% block title %}Club LEO{% endblock %}
 {% block page-id %}club{% endblock %}
 {% block content %}
     <script type="text/javascript">
@@ -13,14 +13,12 @@
         }
     //-->
     </script>
-    <div id="leo"><img id='image_left' border="0" style="float:right" src="/static/css/images/Leo-Logo-Color.png" width="150"></div>
-    <div id="lion"><img id='image_right' border="0" style="float:left" src="/static/css/images/logo_Lions.jpg" width="150"></div>
+
     <div id='menu'>
         <ul>
             <li ><a href="/">Accueil</a></li>
             <li><a href="{% url registered %}">Inscription</a></li>
             <li class="current_page_item"><a href="{% url club %}">Club Leo</a></li>
-            <li><a href="{% url contact %}">Contact</a></li>
         </ul>
     </div>
     <div class="systeme_onglets">
@@ -35,41 +33,42 @@
                     <table id='top'>
                         <TR>
                             <TD class='label'> Charte remise le: </TD>
-                            <TD>{{club.date_of_charter}}</TD>
+                            <TD class='text'>{{club.date_of_charter}}</TD>
                         </TR>
                         <TR>
                             <TD class='label'> Filleul de: </TD>
-                            <TD>{{club.godson}}</TD>
+                            <TD class='text'>{{club.godson}}</TD>
                         </TR>
                         <TR>
                             <TD class='label'> Conseiller leo: </TD>
-                            <TD>{{club.advisor}}</TD>
+                            <TD class='text'>{{club.advisor}}</TD>
                         </TR>
-                    </table>
-                    <h2>Officiels du club</h2>
-                    <table id='bottom'>
+                        <TR>
+                            <TD class='label'> Siege: </TD>
+                            <TD class='text'>{{club.seat}}</TD>
+                        </TR>
                         <TR>
                             <TD class='label'> President: </TD>
-                            <TD>{{club.president}}</TD>
+                            <TD class='text'>{{club.president}}</TD>
                         </TR>
                         <TR>
                             <TD class='label'>Secretaire: </TD>
-                            <TD>{{club.secretary}}</TD>
+                            <TD class='text'>{{club.secretary}}</TD>
                         </TR>
                         <TR>
                             <TD class='label'> tresorier: </TD>
-                            <TD>{{club.treasurer}}</TD>
+                            <TD class='text'>{{club.treasurer}}</TD>
                         </TR>
                         <TR>
                             <TD class='label'> Directeur des effectifs: </TD>
-                            <TD>{{club.director_of_Staff}}</TD>
+                            <TD class='text'>{{club.director_of_Staff}}</TD>
                         </TR>
                         <TR>
                             <TD class='label'> Protocole: </TD>
-                            <TD>{{club.protocol}}</TD>
+                            <TD class='text'>{{club.protocol}}</TD>
                         </TR>
+
                     </table>
-                    <p>{{club.seat}}</p>
                 </div>
             {% endfor %}
         </div>

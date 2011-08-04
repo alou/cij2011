@@ -89,19 +89,17 @@ a {color: #003871;
 
 #registered #registered_form  input[id="id_last_name"],
                               input[id="id_first_name"],
-                              select[id="id_country"],
                               input[id="id_city"],
-                              select[id="id_nationality"],
                               input[id="id_email"]{
             width: 100px; margin-left: 20px}
 
+#registered #registered_form input[id="id_submit"], select[id="id_nationality"], select[id="id_transportation"], select[id="id_country"]{width: 104px; margin-left: 20px}
 #registered #registered_form input[id="id_num_passport"],
                              input[id="id_club_name"],
                              input[id="id_zone"],
                              input[id="id_district"],
                              input[id="id_date_to_arrive"],
                              input[id="id_departure_date"],
-                             select[id="id_transportation"],
                              input[id="id_submit"]{
             width: 100px;margin-left: 20px
             }
@@ -137,11 +135,12 @@ a {color: #003871;
 #correction #left {float:left; width: 400px;}
 #correction #registered_form ul{
             display : none;}
+#correction #registered_form input[id="id_submit"], select[id="id_nationality"], select[id="id_transportation"], select[id="id_country"]{width: 104px; margin-left: 20px}
+
 #correction #registered_form  input[id="id_last_name"],
                               input[id="id_first_name"],
                               input[id="id_country"],
                               input[id="id_city"],
-                              input[id="id_nationality"],
                               input[id="id_email"]{
             width: 100px; margin-left: 20px}
 
@@ -150,9 +149,7 @@ a {color: #003871;
                              input[id="id_zone"],
                              input[id="id_district"],
                              input[id="id_date_to_arrive"],
-                             input[id="id_departure_date"],
-                             input[id="id_transportation"],
-                             input[id="id_submit"]{
+                             input[id="id_departure_date"],{
             width: 100px;margin-left: 20px
             }
 

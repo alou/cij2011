@@ -2,10 +2,38 @@
 Design by Alou and Fad
 */
 body{margin: 0 auto;
-     width: 980px;}
+     width: 980px;background-color: #DFDFDF;}
 a {color: #003871;
     text-decoration: none;}
+.title {
+    color: #464646;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 100%;
+    padding-bottom: 10px;
+    text-decoration: none;
+    text-shadow: -1px 5px 14px;
+}
 
+.texte {
+    color: #464646;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: -1px;
+    line-height: 100%;
+    padding-bottom: 10px;
+    text-decoration: none;
+    text-shadow: -1px 5px 14px;
+}
+#home #programme{list-style: none;}
+#home, #registered, #club, #correction, #pampers, #login {background-color: Wheat;
+                    -moz-box-shadow: 0 0 27px 7px #9E9E9E;
+    border: 1px solid white;}
 #home #content h1{text-align: center;
                   font-size: 50px;
                   }
@@ -81,6 +109,7 @@ a {color: #003871;
 
 
 /* Registered */
+.box {-moz-border-radius: 5px 5px 5px 5px;    -moz-box-shadow: 0 1px 2px #ABABAB;    background-color: white;    margin-bottom: 15px;    padding: 15px;}
 #registered  {margin: 0 auto;}
 #registered  #registered_form{  margin-left: 97px;
     margin-top: 121px;
@@ -91,9 +120,10 @@ a {color: #003871;
                               input[id="id_first_name"],
                               input[id="id_city"],
                               input[id="id_email"]{
-            width: 100px; margin-left: 20px}
+            width: 100px; margin-left: 20px; background-color: #FEF6DF;}
 
 #registered #registered_form input[id="id_submit"], select[id="id_nationality"], select[id="id_transportation"], select[id="id_country"]{width: 104px; margin-left: 20px}
+#registered #registered_form input[type="radio"]{background-color: #FEF6DF;}
 #registered #registered_form input[id="id_num_passport"],
                              input[id="id_club_name"],
                              input[id="id_zone"],
@@ -101,7 +131,7 @@ a {color: #003871;
                              input[id="id_date_to_arrive"],
                              input[id="id_departure_date"],
                              input[id="id_submit"]{
-            width: 100px;margin-left: 20px
+            width: 100px;margin-left: 20px; background-color: #FEF6DF;
             }
 .label{font-family: times New Roman;font-weight: bold;
     font-size: 20px; width: 180px;}
@@ -142,7 +172,7 @@ a {color: #003871;
                               input[id="id_country"],
                               input[id="id_city"],
                               input[id="id_email"]{
-            width: 100px; margin-left: 20px}
+            width: 100px; margin-left: 20px ; background-color: #FEF6DF}
 
 #correction #registered_form input[id="id_num_passport"],
                              input[id="id_club_name"],
@@ -157,10 +187,10 @@ a {color: #003871;
 /* defilement images */
 #home #gallery {
     position:relative;
-    height:360px
+    height:338px
 }
-#home #gallery {margin: 0 auto;height: 200px;
-    width: 500px;
+#home #gallery {margin: 0 auto;height: 338px;
+    width: 450px;
 }
     #home #gallery a {
         float:left;
@@ -256,7 +286,7 @@ a {color: #003871;
 /*  fonction jquery click_table qui permet de clicker
     sur toute une ligne d'un tableau
 */
-#pampers table {margin: 0 auto;border: 1px solid;border-collapse: collapse}
+#pampers table {margin: 0 auto;border: 1px solid;border-collapse: collapse; background-color: #FEF6DF; margin-bottom: 45px;}
 #pampers table th , #pampers table td {border: 1px solid;}
 
 #pampers #click_table tr:hover {background-color: #FBE7C8;}

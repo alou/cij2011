@@ -21,14 +21,14 @@ function slideShow() {
                 $('#gallery a:first').css({opacity: 1.0});
 
                 //Set the caption background to semi-transparent
-                $('#gallery .caption').css({opacity: 0.7});
+                $('#gallery .caption').css({opacity: 0.0});
 
                 //Resize the width of the caption according to the image width
                 $('#gallery .caption').css({width: $('#gallery a').find('img').css('width')});
 
                 //Get the caption of the first image from REL attribute and display it
                 $('#gallery .content').html($('#gallery a:first').find('img').attr('rel'))
-                .animate({opacity: 0.7}, 400);
+                .animate({opacity: 0.0}, 400);
 
                 //Call the gallery function to run the slideshow, 6000 = change to next image after 6 seconds
                 setInterval('gallery()',6000);
@@ -57,7 +57,7 @@ function gallery() {
                 $('#gallery .caption').animate({opacity: 0.0}, { queue:false, duration:0 }).animate({height: '1px'}, { queue:true, duration:300 });
 
                 //Animate the caption, opacity to 0.7 and heigth to 100px, a slide up effect
-                $('#gallery .caption').animate({opacity: 0.7},100 ).animate({height: '100px'},500 );
+                $('#gallery .caption').animate({opacity: 0.0},100 ).animate({height: '100px'},500 );
 
                 //Display the content
                 $('#gallery .content').html(caption);
@@ -70,53 +70,88 @@ function gallery() {
             <li><a href="{% url registered %}">Inscription</a></li>
             <li><a href="{% url club %}">Club Leo</a></li>
         </ul>
+        <a href = "{% url login %}">Administration</a>
     </div>
+
    <div id="gallery">
         <a href="#" class="show">
-            <img src="/static/css/images/flowing-rock.jpg" alt="Flowing Rock" width="500" height="200" title="" alt="" rel="<h3>Alou le Best</h3>Le corps"/>
+            <img src="/static/css/images/colibri/diapo1.jpg" alt="Flowing Rock" width="450" height="338" title="" alt="" rel="<h3>Alou le Best</h3>Le corps"/>
         </a>
         <a href="#">
-            <img src="/static/css/images/grass-blades.jpg" alt="Grass Blades" width="500" height="200" title="" alt="" rel="<h3>Grass Blades</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "/>
+            <img src="/static/css/images/colibri/diapo2.jpg" alt="Grass Blades" width="450" height="338" title="" alt="" rel="<h3>Grass Blades</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "/>
         </a>
         <a href="#">
-            <img src="/static/css/images/ladybug.jpg" alt="Ladybug" width="500" height="200" title="" alt="" rel="<h3>Ladybug</h3>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."/>
+            <img src="/static/css/images/colibri/diapo3.jpg" alt="Ladybug" width="450" height="338" title="" alt="" rel="<h3>Ladybug</h3>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."/>
         </a>
         <a href="#">
-            <img src="/static/css/images/lightning.jpg" alt="Lightning" width="500" height="200" title="" alt="" rel="<h3>Lightning</h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+            <img src="/static/css/images/colibri/diapo4.jpg" alt="Lightning" width="450" height="338" title="" alt="" rel="<h3>Lightning</h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
         </a>
         <a href="#">
-            <img src="/static/css/images/lotus.jpg" alt="Lotus" width="500" height="200" title="" alt="" rel="<h3>Lotus</h3>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."/>
+            <img src="/static/css/images/colibri/diapo5.jpg" alt="Lotus" width="450" height="338" title="" alt="" rel="<h3>Lotus</h3>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."/>
         </a>
         <a href="#">
-            <img src="/static/css/images/mojave.jpg" alt="Mojave" width="500" height="200" title="" alt="" rel="<h3>Mojave</h3>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."/>
+            <img src="/static/css/images/colibri/diapo6.jpg" alt="Mojave" width="450" height="338" title="" alt="" rel="<h3>Mojave</h3>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."/>
         </a>
         <a href="#">
-            <img src="images/pier.jpg" alt="Pier" width="500" height="200" title="" alt="" rel="<h3>Pier</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
+            <img src="/static/css/images/colibri/diapo7.jpg" alt="Pier" width="450" height="338" title="" alt="" rel="<h3>Pier</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."/>
         </a>
         <a href="#">
-            <img src="/static/css/images/sea-mist.jpg" alt="Sea Mist" width="500" height="200" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+            <img src="/static/css/images/colibri/diapo8.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
         </a>
         <a href="#">
-            <img src="/static/css/images/stones.jpg" alt="Stone" width="500" height="200" title="" alt="" rel="<h3>Stone</h3>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."/>
+            <img src="/static/css/images/colibri/diapo9.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
         </a>
+        <a href="#">
+            <img src="/static/css/images/colibri/diapo10.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+        </a>
+        <a href="#">
+            <img src="/static/css/images/colibri/diapo11.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+        </a>
+        <a href="#">
+            <img src="/static/css/images/colibri/diapo12.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+        </a>
+        <a href="#">
+            <img src="/static/css/images/colibri/diapo13.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+        </a>
+        <a href="#">
+            <img src="/static/css/images/colibri/diapo14.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+        </a>
+        <a href="#">
+            <img src="/static/css/images/colibri/diapo15.jpg" alt="Sea Mist" width="450" height="338" title="" alt="" rel="<h3>Sea Mist</h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
+        </a>
+
         <div class="caption"><div class="content"></div></div>
     </div>
     <div id='content'>
-        <h1>Nombre d'inscrits : {{pamper_count}}</h1>
+        <h1 class='title'>Nombre d'inscrits : {{pamper_count}}</h1>
         <div id='content_left'>
 
-            <h2>Accueil</h2>
-
-            <p>Bamako accueille du 05 - 10 septembre 2011 la 7e édition du camp international de la jeunesse (CIJ 2011).</p>
+            <p class='texte'>Bamako accueille du 05 - 11 septembre 2011 la 7e édition du camp international de la jeunesse (CIJ 2011).</p>
+            <h2 class='title'>Ce programme a pour objectif de :</h2>
+            <ul id='programme'>
+                <li>Permettre aux jeunes de différents pays d'établir des relations d’amitié, de solidarité, d’entraide et favoriser le brassage culturel.</li>
+                <li>Promouvoir la tolérance et l'amitié entre les pays et œuvrer en faveur de la paix dans le monde et de la compréhension entre les hommes.</li>
+                <li>Développer un potentiel de leadership chez les jeunes d'exception.</li>
+            </ul>
+            <h2 class='title'>Hébergement:</h2>
+            <p>La ville de Bamako a été choisie par le comité d’organisation pour accueillir ce grand rendez-vous des jeunes de la sous région. Les raisons de ce choix sont multiples. D’abord c’est la capitale mais aussi pour son parc hôtelier.</p>
+            <h2 class='title'>les cites d’hébergement:</h2>
+            <p>le CRES de badalabougou est situé sur la coline de badalabougou affectueusement appelée la coline du savoir. Ce complexe est composé de plusieurs chambres reparties de la manière suivante:</p>
+                <ul id='programme'>
+                    <li>Un amphithéâtre;</li>
+                    <li>Une salle informatique, une bibliothèque de 60 places;</li>
+                    <li>Un terrain de football, une piscine, terrain de tennis, des salles de jeux de société.</li>
+                </ul>
+            <p>L’hôtel les Colibris comporte 57 chambres de standing 3 étoiles, toutes climatisées avec accès gratuit à internet via wifi. L’espace verdoyant occupé par les manguiers et de beaux jardins vous procurera une bonne sensation agrémentée par le gazouillement des colibris. </p>
 
             <p>Cet accueil des Clubs et de notre District est une action sociale pour la Jeunesse en faveur de l'amitié entre les peuples et la connaissance de notre pays. C'est une expérience culturelle et amicale car ce camp accueillera des jeunes venant de différents pays.</p>
-
+            <p>Le Mali est un pays de l'Afrique de l'ouest qui regorge d’énormes potentialités Touristiques. Nous vous proposons de Découvrir ce pays sur les sites comme malipagejaune ou sur le site du ministère du tourisme du mali <a href="http://www.le-mali.com/omatho/">ici</a>. Pour cette année 2011, le camp de jeunesse vous offre la possibilité de découvrir les richesses du territoire Malien a travers: (Sybie, etc...)</p>
             <p>Pour participer au camp veuillez remplir le formulaire d'inscription dans la rubrique "Inscription" de notre site. Les formailtés d'entrée au Mali y sont également précisées.</p>
 
             <p>A très bientôt.</p>
         </div>
         <div id='content_left'></div>
-        <a href = "{% url login %}">Administration</a>
+
 
     </div>
 

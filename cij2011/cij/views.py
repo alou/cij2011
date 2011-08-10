@@ -34,10 +34,15 @@ def registered(request):
     if request.method == 'POST':
         form = PamperForm(request.POST)
         try:
+
             if 'language' in request.POST and 'title' \
                 in request.POST and form.is_valid():
+                print 'Alou'
                 form.save()
                 pamper = Pamper.objects.order_by('-id')[0]
+                pamper.receipt = str(pamper.id) + pamper.last_name[0:2] + \
+                           pamper.first_name[0:2] + str(pamper.date_to_arrive)
+                pamper.save()
                 return HttpResponseRedirect(reverse('confirmation',
                                             args=[pamper.id]))
             elif 'title' in request.POST and not 'language' in request.POST:

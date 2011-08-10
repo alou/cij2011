@@ -65,13 +65,13 @@ class Pamper(models.Model):
     district = models.CharField(max_length=5, verbose_name=("District"))
     country = models.ForeignKey(Country, related_name='country',\
                                      verbose_name=("Pays"))
-    date_to_arrive = models.DateField(verbose_name=("Date d'arrivee"),\
-                             default=datetime.datetime.today)
-    departure_date = models.DateField(verbose_name=("Date de depart"),\
-                             default=datetime.datetime.today)
+    date_to_arrive = models.DateField(verbose_name=("Date d'arrivee"))
+    departure_date = models.DateField(verbose_name=("Date de depart"))
     transportation = models.ForeignKey(Transportation,
                                        related_name='transportation',\
                                        verbose_name=("Moyen de transport"))
+    status = models.BooleanField(default=False, verbose_name=("Status"))
+    receipt = models.CharField(max_length=20, verbose_name=("Reçu"))
 
     def __unicode__(self):
         return u'%(first_name)s %(last_name)s ' % \

@@ -31,7 +31,7 @@ a {color: #003871;
     text-shadow: -1px 5px 14px;
 }
 #home #programme{list-style: none;}
-#home, #registered, #club, #correction, #pampers, #login, #display {background-color: Wheat;
+#home, #registered, #club, #correction, #pampers, #login, #display, #confirmation {background-color: Wheat;
                     -moz-box-shadow: 0 0 27px 7px #9E9E9E;
     border: 1px solid white;}
 #home #content h1{text-align: center;
@@ -144,16 +144,16 @@ p{font-size: 20px;}
 
 
 /* Confirmation */
-#coonfirmation #right table{width: 430px;}
-#coonfirmation #right {float: right;
+#confirmation #right table{width: 430px;}
+#confirmation #right {float: right;
                        width: 410px;
                        margin-top: -190px;
                        margin-right: 65px;
                        }
 
-#coonfirmation #left {margin-top: 110px;
+#confirmation #left {margin-top: 110px;
                       margin-left: 166px}
-#coonfirmation #left {width: 410px;}
+#confirmation #left {width: 410px;}
 
 
 /* display */

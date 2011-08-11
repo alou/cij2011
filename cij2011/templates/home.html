@@ -124,8 +124,11 @@ function gallery() {
     </div>
     <div id='content'>
         <h1 class='title'>Nombre d'inscrits : {{pamper_count}}</h1>
-        <div id='content_left'>
 
+        <div id='content_left'>
+            {% ifnotequal pamper '' %}
+                <p>Votre pre-inscription a ete prise en compte, et votre numero de recu est: <span style ="color:red">{{pamper.receipt}}</span> note le.</p>
+            {% endifnotequal %}
             <p class='texte'>Bamako du 05 au 11 Septembre 2011 aura lieu la 7e édition du camp international de la jeunesse (CIJ 2011).</p>
             <h2 class='title'>Ce programme a pour objectif de :</h2>
             <ul id='programme'>

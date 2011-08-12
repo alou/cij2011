@@ -34,6 +34,9 @@ a {color: #003871;
 #home, #registered, #club, #correction, #pampers, #login, #display, #confirmation {background-color: Wheat;
                     -moz-box-shadow: 0 0 27px 7px #9E9E9E;
     border: 1px solid white;}
+#confirmation {background-color: Wheat;
+                    -moz-box-shadow: 0 0 27px 7px #9E9E9E;
+    border: 1px solid white; height:400px}
 #home #content h1{text-align: center;
                   font-size: 50px;
                   }

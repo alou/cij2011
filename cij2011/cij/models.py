@@ -27,7 +27,7 @@ class Club(models.Model):
 
 class Country(models.Model):
     """ Info of country """
-    name = models.CharField(max_length=30, verbose_name=("Name"))
+    name = models.CharField(max_length=30, verbose_name=("Pays"))
 
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
@@ -35,7 +35,7 @@ class Country(models.Model):
 
 class Nationality(models.Model):
     """ Info of nationality """
-    name = models.CharField(max_length=30, verbose_name=("Name"))
+    name = models.CharField(max_length=30, verbose_name=("Nationalité"))
 
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
@@ -43,7 +43,7 @@ class Nationality(models.Model):
 
 class Transportation(models.Model):
     """ Info of transportation """
-    name = models.CharField(max_length=30, verbose_name=("Name"))
+    name = models.CharField(max_length=30, verbose_name=("Moyen de transport"))
 
     def __unicode__(self):
         return u'%(name)s' % {"name": self.name}
@@ -57,7 +57,7 @@ class Pamper(models.Model):
     last_name = models.CharField(max_length=30, verbose_name=("Nom"))
     language = models.CharField(max_length=30, verbose_name=("Langue"))
     nationality = models.ForeignKey(Nationality, related_name='nationality',\
-                                     verbose_name=("Nationalite"))
+                                     verbose_name=("Nationalité"))
     city = models.CharField(max_length=30, verbose_name=("Ville"))
     email = models.EmailField(blank=True, verbose_name=("Email"))
     club_name = models.CharField(max_length=50, verbose_name=("Nom du club"))
@@ -65,13 +65,13 @@ class Pamper(models.Model):
     district = models.CharField(max_length=5, verbose_name=("District"))
     country = models.ForeignKey(Country, related_name='country',\
                                      verbose_name=("Pays"))
-    date_to_arrive = models.DateField(verbose_name=("Date d'arrivee"))
-    departure_date = models.DateField(verbose_name=("Date de depart"))
+    date_to_arrive = models.DateField(verbose_name=("Date d'arrivée"))
+    departure_date = models.DateField(verbose_name=("Date de départ"))
     transportation = models.ForeignKey(Transportation,
                                        related_name='transportation',\
                                        verbose_name=("Moyen de transport"))
     status = models.BooleanField(default=False, verbose_name=("Status"))
-    receipt = models.CharField(max_length=20, verbose_name=("Reçu"))
+    receipt = models.CharField(max_length=20, verbose_name=("Réçu"))
 
     def __unicode__(self):
         return u'%(first_name)s %(last_name)s ' % \

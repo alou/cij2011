@@ -9,7 +9,7 @@ class PamperForm(forms.ModelForm):
 
     class Meta:
         model = Pamper
-        exclude = ['title', 'language']
+        exclude = ['title', 'language', 'receipt', 'status']
 
     def __init__(self, *args, **kwargs):
         forms.ModelForm.__init__(self, *args, **kwargs)

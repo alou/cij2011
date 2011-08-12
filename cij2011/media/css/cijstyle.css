@@ -8,7 +8,7 @@ a {color: #003871;
 .title {
     color: #464646;
     font-family: Georgia,"Times New Roman",Times,serif;
-    font-size: 28px;
+    font-size: 32px;
     font-style: italic;
     font-weight: bold;
     letter-spacing: -1px;
@@ -31,14 +31,20 @@ a {color: #003871;
     text-shadow: -1px 5px 14px;
 }
 #home #programme{list-style: none;}
-#home, #registered, #club, #correction, #pampers, #login {background-color: Wheat;
+#home, #registered, #club, #correction, #pampers, #login, #display, #confirmation {background-color: Wheat;
                     -moz-box-shadow: 0 0 27px 7px #9E9E9E;
     border: 1px solid white;}
+#confirmation {background-color: Wheat;
+                    -moz-box-shadow: 0 0 27px 7px #9E9E9E;
+    border: 1px solid white; height:400px}
 #home #content h1{text-align: center;
                   font-size: 50px;
                   }
+/*
 #home #content h2{font-size: 30px;}
-#home #content p{font-size: 20px;}
+*/
+#home #content {margin: 0 auto; width: 800px;}
+p{font-size: 20px;}
 /* Login */
 #alou {margin: 0 auto;
        width: 480px;}
@@ -141,16 +147,16 @@ a {color: #003871;
 
 
 /* Confirmation */
-#coonfirmation #right table{width: 430px;}
-#coonfirmation #right {float: right;
+#confirmation #right table{width: 430px;}
+#confirmation #right {float: right;
                        width: 410px;
                        margin-top: -190px;
                        margin-right: 65px;
                        }
 
-#coonfirmation #left {margin-top: 110px;
+#confirmation #left {margin-top: 110px;
                       margin-left: 166px}
-#coonfirmation #left {width: 410px;}
+#confirmation #left {width: 410px;}
 
 
 /* display */

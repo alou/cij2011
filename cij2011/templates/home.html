@@ -124,9 +124,12 @@ function gallery() {
     </div>
     <div id='content'>
         <h1 class='title'>Nombre d'inscrits : {{pamper_count}}</h1>
-        <div id='content_left'>
 
-            <p class='texte'>Bamako accueille du 05 - 11 septembre 2011 la 7e édition du camp international de la jeunesse (CIJ 2011).</p>
+        <div id='content_left'>
+            {% ifnotequal pamper '' %}
+                <p>Votre pre-inscription a ete prise en compte, et votre numero de recu est: <span style ="color:red">{{pamper.receipt}}</span> note le.</p>
+            {% endifnotequal %}
+            <p class='texte'>Bamako du 05 au 11 Septembre 2011 aura lieu la 7e édition du camp international de la jeunesse (CIJ 2011).</p>
             <h2 class='title'>Ce programme a pour objectif de :</h2>
             <ul id='programme'>
                 <li>Permettre aux jeunes de différents pays d'établir des relations d’amitié, de solidarité, d’entraide et favoriser le brassage culturel.</li>
@@ -135,8 +138,8 @@ function gallery() {
             </ul>
             <h2 class='title'>Hébergement:</h2>
             <p>La ville de Bamako a été choisie par le comité d’organisation pour accueillir ce grand rendez-vous des jeunes de la sous région. Les raisons de ce choix sont multiples. D’abord c’est la capitale mais aussi pour son parc hôtelier.</p>
-            <h2 class='title'>les cites d’hébergement:</h2>
-            <p>le CRES de badalabougou est situé sur la coline de badalabougou affectueusement appelée la coline du savoir. Ce complexe est composé de plusieurs chambres reparties de la manière suivante:</p>
+            <h2 class='title'>Les cites d’hébergement:</h2>
+            <p>Le CRES de badalabougou est situé sur la coline de badalabougou affectueusement appelée la coline du savoir. Ce complexe est composé de plusieurs chambres reparties de la manière suivante:</p>
                 <ul id='programme'>
                     <li>Un amphithéâtre;</li>
                     <li>Une salle informatique, une bibliothèque de 60 places;</li>
@@ -146,7 +149,7 @@ function gallery() {
 
             <p>Cet accueil des Clubs et de notre District est une action sociale pour la Jeunesse en faveur de l'amitié entre les peuples et la connaissance de notre pays. C'est une expérience culturelle et amicale car ce camp accueillera des jeunes venant de différents pays.</p>
             <p>Le Mali est un pays de l'Afrique de l'ouest qui regorge d’énormes potentialités Touristiques. Nous vous proposons de Découvrir ce pays sur les sites comme malipagejaune ou sur le site du ministère du tourisme du mali <a href="http://www.le-mali.com/omatho/">ici</a>. Pour cette année 2011, le camp de jeunesse vous offre la possibilité de découvrir les richesses du territoire Malien a travers: (Sybie, etc...)</p>
-            <p>Pour participer au camp veuillez remplir le formulaire d'inscription dans la rubrique "Inscription" de notre site. Les formailtés d'entrée au Mali y sont également précisées.</p>
+            <p>Pour participer au camp veuillez remplir le formulaire d'inscription dans la rubrique "<a href='{% url registered %}'>Inscription</a>" de notre site. Les formalités d'entrée au Mali y sont également précisées.</p>
 
             <p>A très bientôt.</p>
         </div>

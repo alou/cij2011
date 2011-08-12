@@ -19,8 +19,12 @@ def home(request):
     """ Page d'accueil """
 
     pamper_count = Pamper.objects.all().count()
+    pamper = ''
+    if 'rece' in request.session:
+        pamper = request.session.pop('rece')
+        print pamper
 
-    return render_to_response('home.html', {'pamper_count': pamper_count})
+    return render_to_response('home.html', {'pamper_count': pamper_count, 'pamper': pamper})
 
 
 def registered(request):
@@ -34,10 +38,14 @@ def registered(request):
     if request.method == 'POST':
         form = PamperForm(request.POST)
         try:
+
             if 'language' in request.POST and 'title' \
                 in request.POST and form.is_valid():
                 form.save()
                 pamper = Pamper.objects.order_by('-id')[0]
+                pamper.receipt = str(pamper.id) + pamper.last_name[0:2] + \
+                           pamper.first_name[0:2] + str(pamper.date_to_arrive)
+                pamper.save()
                 return HttpResponseRedirect(reverse('confirmation',
                                             args=[pamper.id]))
             elif 'title' in request.POST and not 'language' in request.POST:
@@ -60,8 +68,9 @@ def confirmation(request, *args, **kwargs):
     num = kwargs["num"] or 1
     c = {}
     pamper = Pamper.objects.filter(id=num)[0]
-    pamper.url = reverse('correction', args=[pamper.id])
+    pamper.correction = reverse('correction', args=[pamper.id])
     c.update(csrf(request))
+    request.session['rece'] = pamper
     c.update({'pamper': pamper})
     return render_to_response('confirmation.html', c)
 

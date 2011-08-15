@@ -202,7 +202,7 @@ def pampers(request, *args, **kwargs):
 
     user = request.user
     num = kwargs["num"] or 1
-    pampers = Pamper.objects.all().order_by('-last_name', '-first_name')
+    pampers = Pamper.objects.all().order_by('-id', '-last_name', '-first_name')
 
     for pamper in pampers:
         pamper.url_display = reverse('display',

@@ -31,7 +31,7 @@ a {color: #003871;
     text-shadow: -1px 5px 14px;
 }
 #home #programme{list-style: none;}
-#home, #registered, #club, #correction, #pampers, #login, #display, #confirmation {background-color: Wheat;
+#home, #registered, #club, #correction, #pampers, #login, #display, #confirmation, #contact {background-color: Wheat;
                     -moz-box-shadow: 0 0 27px 7px #9E9E9E;
     border: 1px solid white;}
 #confirmation {background-color: Wheat;
@@ -301,3 +301,14 @@ p{font-size: 20px;}
     padding: 3px 5px;text-align: center;}
 
 #pampers #click_table a:hover {cursor: pointer;}
+#footer{position:absolute;margin-top:20px;padding-bottom:10px;}
+#footer ul{margin-left:26px;}
+#footer ul li{display:inline;color:#f8f8f8;padding-left:0.4em;padding-right:0.4em;font-size:77%;padding-right:10px;padding-left:10px;border-left:1px solid #f8f8f8;text-transform:uppercase;line-height:0.75em;}
+#footer ul li:first-child{border-left:none;}
+
+#contact #lions,  #contact #leo{ margin-left: 200px;
+    margin-top: 130px;
+    width: 600px;}
+#contact #leo{ margin-left: 200px;
+    margin-top: 50px;
+    width: 600px;}

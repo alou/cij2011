@@ -18,7 +18,7 @@ MANAGERS = ADMINS
 
 DATABASES = {'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/alou/src/cij2011/cij2011/data_cij.sqlite'}}
+        'NAME': 'data_cij.sqlite'}}
 
 TIME_ZONE = 'Africa/Bamako'
 

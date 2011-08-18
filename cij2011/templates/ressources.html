@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Ressources{% endblock %}
+{% block page-id %}ressources{% endblock %}
+{% block content %}
+
+
+    <div id='menu'>
+        <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="{% url registered %}">Inscription</a></li>
+            <li><a href="{% url club %}">Club Leo</a></li>
+            <li class="current_page_item"><a href="#">Ressources</a></li>
+        </ul>
+    </div>
+
+    <div id='doc'>
+        <table id="click_table">
+            <caption><h1>Liste des doccuments utiles</h1></caption>
+            <tr>
+                <th>Nom du doccument</th>
+                <th>Lien</th>
+            </tr>
+            <tr>
+                <td>Programme d'activité du camp de jeunesse</td>
+                <td><a href='http://cij2011.info/telechargements/programme_LEO.pdf'>programme</a></td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

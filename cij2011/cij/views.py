@@ -252,3 +252,8 @@ def display(request, *args, **kwargs):
     c.update({'pamper': pamper})
 
     return render_to_response('display.html', c)
+
+def ressources(request):
+    """ page contenant les docs a telecharger"""
+    c = {}
+    return render_to_response('ressources.html', c)

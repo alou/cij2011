@@ -37,7 +37,7 @@ a {color: #003871;
     list-style: none outside none;
     text-align: center;
     text-decoration: none;}
-#home, #registered, #club, #correction, #pampers, #login, #display, #confirmation, #contact {background-color: Wheat;
+#home, #registered, #club, #correction, #pampers, #login, #display, #confirmation, #contact, #ressources {background-color: Wheat;
                     -moz-box-shadow: 0 0 27px 7px #9E9E9E;
     border: 1px solid white;}
 #confirmation {background-color: Wheat;
@@ -316,5 +316,8 @@ p{font-size: 20px;}
     margin-top: 130px;
     width: 600px;}
 #contact #leo{ margin-left: 200px;
+    margin-top: 50px;
+    width: 600px;}
+#ressources #doc{ margin-left: 200px;
     margin-top: 50px;
     width: 600px;}

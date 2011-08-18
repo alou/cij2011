@@ -19,7 +19,7 @@ a {color: #003871;
 }
 
 .texte {
-    color: #003871;
+    color: #464646;
     font-family: Georgia,"Times New Roman",Times,serif;
     font-size: 18px;
     font-style: italic;
@@ -31,7 +31,7 @@ a {color: #003871;
     text-shadow: -1px 5px 14px;
 }
 #home #programme{list-style: none;}
-#home #theme{color: #294D94;
+#home #theme{color: #003871;
     font-size: 35px;
     font-style: italic;
     list-style: none outside none;

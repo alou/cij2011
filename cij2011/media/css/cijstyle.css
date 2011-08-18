@@ -19,7 +19,7 @@ a {color: #003871;
 }
 
 .texte {
-    color: #464646;
+    color: #003871;
     font-family: Georgia,"Times New Roman",Times,serif;
     font-size: 18px;
     font-style: italic;
@@ -31,6 +31,12 @@ a {color: #003871;
     text-shadow: -1px 5px 14px;
 }
 #home #programme{list-style: none;}
+#home #theme{color: #294D94;
+    font-size: 35px;
+    font-style: italic;
+    list-style: none outside none;
+    text-align: center;
+    text-decoration: none;}
 #home, #registered, #club, #correction, #pampers, #login, #display, #confirmation, #contact {background-color: Wheat;
                     -moz-box-shadow: 0 0 27px 7px #9E9E9E;
     border: 1px solid white;}

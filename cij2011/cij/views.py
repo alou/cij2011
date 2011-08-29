@@ -13,7 +13,9 @@ from django.contrib.auth.decorators import login_required
 
 from cij.models import Pamper, Club
 from cij.form import PamperForm, LoginForm
+from lib.export_xls import liste_des_leo
 
+from datetime import datetime
 
 def home(request):
     """ Page d'accueil """
@@ -257,3 +259,17 @@ def ressources(request):
     """ page contenant les docs a telecharger"""
     c = {}
     return render_to_response('ressources.html', c)
+
+@login_required
+def export_excel(request):
+    from django.http import HttpResponse
+    pampers = Pamper.objects.all().order_by('-id', '-last_name', '-first_name')
+    file_name = 'listes-des-leos-du-%(date)s a bko.xls' \
+                                        % {'date': datetime.now()}
+    file_content = liste_des_leo(pampers).getvalue()
+
+    response = HttpResponse(file_content, \
+                            content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename="%s"' % file_name
+    response['Content-Length'] = len(file_content)
+    return response

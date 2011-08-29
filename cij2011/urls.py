@@ -11,10 +11,12 @@ urlpatterns = patterns('',
     url(r"^registered/$", "cij.views.registered", name="registered"),
     url(r"^club/$", "cij.views.club", name="club"),
     url(r"^pampers/(?P<num>\d+)*$", "cij.views.pampers", name="pampers"),
-    url(r"^display/(?P<id>\d+)$", "cij.views.display",\
+    url(r"^details/(?P<id>\d+)$", "cij.views.display",\
                                     name="display"),
     url(r"^contact/$", "cij.views.contact", name="contact"),
     url(r"^confirmation/(?P<num>\d+)*$", "cij.views.confirmation", name="confirmation"),
     url(r"^correction/(?P<num>\d+)*$", "cij.views.correction", name="correction"),
     url(r"^ressources$", "cij.views.ressources", name="ressources"),
+    url(r'^liste$', \
+        "cij.views.export_excel", name='export_excel'),
 )

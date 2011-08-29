@@ -303,7 +303,7 @@ p{font-size: 20px;}
 
 #pampers #click_table tr:hover {background-color: #FBE7C8;}
 
-#pampers #click_table th, #click_table td {
+#pampers #click_table th, #click_table td {font-size: 13px;
     padding: 3px 5px;text-align: center;}
 
 #pampers #click_table a:hover {cursor: pointer;}

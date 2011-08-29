@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Display{% endblock %}
+{% block title %}Détails LEO{% endblock %}
 {% block page-id %}display{% endblock %}
 {% block content %}
 
     <div id='menu'>
         <ul>
             <li><a href="/">Accueil</a></li>
-            <li class="current_page_item"><a href="#">Confirmation</a></li>
+            <li class="current_page_item"><a href="#">Détails LEO</a></li>
             <li><a href="{% url club %}">Club Leo</a></li>
         </ul>
     </div>
@@ -21,7 +21,7 @@
                 <TD class='label'>{{pamper.last_name}}</TD>
             </TR>
             <TR>
-                <TD> Prenom </TD>
+                <TD> Prénom </TD>
                 <TD class='label'>{{pamper.first_name}}</TD>
             </TR>
 
@@ -62,11 +62,11 @@
                 <TD class='label'> {{pamper.district}} </TD>
             </TR>
             <TR>
-                <TD> Date d'arriver </TD>
+                <TD> Date d'arrivée </TD>
                 <TD class='label'> {{pamper.date_to_arrive}} </TD>
             </TR>
             <TR>
-                <TD> Date de depart </TD>
+                <TD> Date de départ </TD>
                 <TD class='label'> {{pamper.departure_date}} </TD>
             </TR>
             <TR>

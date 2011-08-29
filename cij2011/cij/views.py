@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 from cij.models import Pamper, Club
 from cij.form import PamperForm, LoginForm
-from lib.export_xls import liste_des_leo
+from cij2011.lib.export_xls import liste_des_leo
 
 from datetime import datetime
 
